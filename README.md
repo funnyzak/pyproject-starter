@@ -7,7 +7,7 @@
 [![GitHub repo size][repo-size-image]][repository-url]
 
 [repo-size-image]: https://img.shields.io/github/repo-size/funnyzak/pyproject-starter
-[build-status-image]: https://img.shields.io/github/workflow/status/funnyzak/pyproject-starter/lint-and-test
+[build-status-image]: https://img.shields.io/github/workflow/status/funnyzak/pyproject-starter/CI
 [build-status]: https://github.com/funnyzak/pyproject-starter/actions
 [license-image]: https://img.shields.io/github/license/funnyzak/pyproject-starter.svg?style=flat-square
 [repository-url]: https://github.com/funnyzak/pyproject-starter
