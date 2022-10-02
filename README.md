@@ -77,11 +77,11 @@ If you have any questions or suggestions, please feel free to open an issue or p
 
 ## FAQ
 
-### how to install poetry
+### How to install poetry?
   
 See [poetry installation](https://python-poetry.org/docs/#installation).
 
-### how to install python3
+### How to install python3?
 
 See [python installation](https://www.python.org/downloads/).
 
