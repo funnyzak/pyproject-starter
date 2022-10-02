@@ -23,9 +23,3 @@ body:
         Output of the `serve --version` command
     validations:
       required: true
-  - type: input
-    attributes:
-      label: Node version
-      description: Output of the `node --version` command
-    validations:
-      required: true

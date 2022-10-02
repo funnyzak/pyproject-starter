@@ -50,7 +50,5 @@
 
 - [ ] The issues that this PR fixes/closes have been mentioned above.
 - [ ] What this PR adds/changes/removes has been explained.
-- [ ] All tests (`pnpm test`) pass.
-- [ ] The linter (`pnpm lint`) does not throw an errors.
-- [ ] All added/modified code has been commented, and
-      methods/classes/constants/types have been annotated with TSDoc comments.
+- [ ] All tests pass.
+- [ ] The linter does not throw an errors.
