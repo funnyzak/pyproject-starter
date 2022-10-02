@@ -67,11 +67,13 @@ poetry run hello
 - [black](https://black.readthedocs.io/en/stable/)
 - [mypy](https://mypy.readthedocs.io/en/stable/config_file.html#per-module-and-global-options)
 
-## Author
+## Contribution
 
-| [![twitter/funnyzak](https://s.gravatar.com/avatar/c2437e240644b1317a4a356c6d6253ee?s=70)](https://twitter.com/funnyzak 'Follow @funnyzak on Twitter') |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [funnyzak](https://yycc.me/)                                                                                                                           |
+If you have any questions or suggestions, please feel free to open an issue or pull request.
+
+<a href="https://github.com/funnyzak/pyproject-starter/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=funnyzak/pyproject-starter" />
+</a>
 
 ## License
 
