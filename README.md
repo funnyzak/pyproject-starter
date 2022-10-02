@@ -23,7 +23,7 @@ This is a template for a python project. It uses [poetry](https://python-poetry.
 The project contains the following projects under `src`:
 
 - [Hello](https://github.com/funnyzak/pyproject-starter/tree/main/src/hello): a simple hello world project
-- [Multi-layer PDF](https://github.com/funnyzak/pyproject-starter/tree/main/src/multi_layer_pdf): This is a simple tool to merge multiple PDF files into a single PDF file.
+- [PDF_Parse](https://github.com/funnyzak/pyproject-starter/tree/main/src/pdf_parse): a project that parse pdf.
 
 ## Prerequisite
 
@@ -49,7 +49,7 @@ poetry run mypy ./src
 poetry run isort ./src --check
 
 # Lint with flake8
-poetry run flake8 ./src --count --show-source --statistics --ignore=E501
+poetry run flake8 ./src --count --show-source --statistics 
 ```
 
 ## Project Usage

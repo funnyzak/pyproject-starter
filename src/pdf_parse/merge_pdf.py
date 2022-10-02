@@ -15,9 +15,7 @@ from pdf_parse import create_sub_dir
 attachment_root = os.path.join(os.path.dirname(__file__), "attachments")
 txt_pdf_path = os.path.join(attachment_root, "whatispython.pdf")
 pic_pdf_path = os.path.join(attachment_root, "samplepic.pdf")
-merge_pdf_path = os.path.join(
-    os.path.dirname(__file__), "dist", f"merge_{str(int(datetime.now().timestamp()))}.pdf"
-)
+merge_pdf_path = os.path.join(os.path.dirname(__file__), "dist", f"merge_{str(int(datetime.now().timestamp()))}.pdf")
 
 merger = PdfMerger()
 
