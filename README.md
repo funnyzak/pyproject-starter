@@ -34,16 +34,12 @@ The project contains the following projects under `src`:
 
 ```bash
 # dependencies
-# Synchronize the environment with the locked packages and the specified groups.
-poetry install --sync
 # Install dependencies with all extras
 poetry install --all-extras
 # Install dependencies with extras 'pdf'
 poetry install --extras "pdf"
 # Install dependencies with group 'dev'
 poetry install --with dev
-# Install dependencies with group 'coverage' and 'test'
-poetry install --with test,coverage
 # Only install required dependencies
 poetry install
 
