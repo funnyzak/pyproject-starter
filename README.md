@@ -59,13 +59,13 @@ poetry run flake8 ./src --count --show-source --statistics --ignore=E501
 poetry run hello
 ```
 
-## Resources
+## References
 
-- [PyPDF2](https://pypdf2.readthedocs.io/en/latest/user/adding-pdf-annotations.html#free-text)
-- [flake8](https://flake8.pycqa.org/en/latest/)
-- [isort](https://pycqa.github.io/isort/)
-- [black](https://black.readthedocs.io/en/stable/)
-- [mypy](https://mypy.readthedocs.io/en/stable/config_file.html#per-module-and-global-options)
+- [PyPDF2](https://pypdf2.readthedocs.io/en/latest/user/adding-pdf-annotations.html#free-text): a library for working with PDF files.
+- [flake8](https://flake8.pycqa.org/en/latest/): a wrapper around these tools: PyFlakes, pycodestyle, and Ned Batchelder’s McCabe script.
+- [isort](https://pycqa.github.io/isort/): a Python utility / library to sort imports alphabetically, and automatically separated into sections and by type.
+- [black](https://black.readthedocs.io/en/stable/): a Python code formatter.
+- [mypy](https://mypy.readthedocs.io/en/stable/config_file.html#per-module-and-global-options): a static type checker for Python.
 
 ## Contribution
 
@@ -74,6 +74,16 @@ If you have any questions or suggestions, please feel free to open an issue or p
 <a href="https://github.com/funnyzak/pyproject-starter/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=funnyzak/pyproject-starter" />
 </a>
+
+## FAQ
+
+### how to install poetry
+  
+See [poetry installation](https://python-poetry.org/docs/#installation).
+
+### how to install python3
+
+See [python installation](https://www.python.org/downloads/).
 
 ## License
 
