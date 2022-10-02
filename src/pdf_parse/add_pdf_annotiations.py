@@ -2,17 +2,21 @@
 # date: 2022-10-02
 # license: MIT
 # description: Add annotations to pdf file
-# usage: python3 add_pdf_annotiations.py
-# notes:
+# usage: poetry run python src/pdf_parse/add_pdf_annotiations.py
+# notes: 
 
 import os
 
 from PyPDF2 import PdfReader, PdfWriter
 from PyPDF2.generic import AnnotationBuilder
 
+from pdf_parse import create_sub_dir
+
 RESOURCE_ROOT = os.path.join(os.path.dirname(__file__), "attachments")
 source_pdf_path = os.path.join(RESOURCE_ROOT, "whatispython.pdf")
-output_pdf_path = os.path.join(os.path.dirname(__file__), "dist_whatispython_filled.pdf")
+output_pdf_path =  os.path.join(
+    os.path.dirname(__file__), "dist", f"annot_{os.path.basename(source_pdf_path)}"
+)
 
 # Fill the writer with the pages you want
 reader = PdfReader(source_pdf_path)
