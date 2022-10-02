@@ -33,21 +33,33 @@ The project contains the following projects under `src`:
 ## Usages
 
 ```bash
-# Install dependencies
+# dependencies
+# Synchronize the environment with the locked packages and the specified groups.
+poetry install --sync
 # Install dependencies with all extras
 poetry install --all-extras
 # Install dependencies with extras 'pdf'
 poetry install --extras "pdf"
 # Install dependencies with group 'dev'
 poetry install --with dev
+# Install dependencies with group 'coverage' and 'test'
+poetry install --with test,coverage
 # Only install required dependencies
 poetry install
+
+# Install all dependencies
+poetry install --all-extras && poetry install --with dev,test,coverage
 
 # Run project => hello
 poetry run hello
 
 # Ipdb debug "hello" project
 poetry run ipdb3 ./src/hello/main.py
+
+# Test
+poetry run pytest
+# or coverage test
+poetry run tox
 
 # Lint with black
 poetry run black ./src --check
@@ -72,6 +84,8 @@ poetry run flake8 ./src
 - [isort](https://pycqa.github.io/isort/): a Python utility / library to sort imports alphabetically, and automatically separated into sections and by type.
 - [black](https://black.readthedocs.io/en/stable/): a Python code formatter.
 - [mypy](https://mypy.readthedocs.io/en/stable/config_file.html#per-module-and-global-options): a static type checker for Python.
+- [Pytest](https://docs.pytest.org/en/stable/): a testing framework for Python.
+- [ipdb](https://pypi.org/project/ipdb/): a IPython-enabled pdb.
 
 ## FAQ
 

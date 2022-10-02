@@ -7,8 +7,12 @@
 
 
 def hello():
-    print("Hello, world!")
+    return "Hello, world!"
+
+
+def say_hello():
+    print(hello())
 
 
 if __name__ == "__main__":
-    hello()
+    say_hello()
