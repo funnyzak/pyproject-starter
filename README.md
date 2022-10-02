@@ -1,12 +1,29 @@
 # pyroject starter
 
+[![license][license-image]][repository-url]
+[![Build Status][build-status-image]][build-status]
+[![Sourcegraph][sg-image]][sg-url]
+[![Release Date][rle-image]][rle-url]
+[![GitHub repo size][repo-size-image]][repository-url]
+
+[repo-size-image]: https://img.shields.io/github/repo-size/funnyzak/pyproject-starter
+[build-status-image]: https://img.shields.io/github/workflow/status/funnyzak/pyproject-starter/lint-and-test
+[build-status]: https://github.com/funnyzak/pyproject-starter/actions
+[license-image]: https://img.shields.io/github/license/funnyzak/pyproject-starter.svg?style=flat-square
+[repository-url]: https://github.com/funnyzak/pyproject-starter
+[sg-image]: https://img.shields.io/badge/view%20on-Sourcegraph-brightgreen.svg?style=flat-square
+[sg-url]: https://sourcegraph.com/github.com/funnyzak/pyproject-starter
+[rle-image]: https://img.shields.io/github/release-date/funnyzak/pyproject-starter.svg
+[rle-url]: https://github.com/funnyzak/pyproject-starter/releases/latest
+
 This is a template for a python project. It uses [poetry](https://python-poetry.org/) for dependency management.
 
 ## Demo project
 
 The project contains the following projects under `src`:
 
-- Multi-layer PDF: This is a simple tool to merge multiple PDF files into a single PDF file.
+- [Hello](https://github.com/funnyzak/pyproject-starter/tree/main/src/hello): a simple hello world project
+- [Multi-layer PDF](https://github.com/funnyzak/pyproject-starter/tree/main/src/multi_layer_pdf): This is a simple tool to merge multiple PDF files into a single PDF file.
 
 ## Prerequisite
 
@@ -37,6 +54,13 @@ poetry run flake8 ./src --count --show-source --statistics --ignore=E501
 # Check install poetry lock file
 pip install poetry-lock-check==0.1.0
 python3 -m poetry_lock_check check-lock
+```
+
+## Project Usage
+
+```bash
+# Run Hello Project 
+poetry run hello
 ```
 
 ## Resources

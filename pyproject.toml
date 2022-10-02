@@ -5,9 +5,10 @@ description = "This is a template for a python project. It uses poetry for depen
 authors = ["Leon <silenceace@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "multi_layer_pdf", from = "src"}]
+packages = [{include = "multi_layer_pdf", from = "src"}, {include = "hello", from = "src"}]
 
 [tool.poetry.scripts]
+hello = "hello.main:start"
 
 [tool.poetry.dependencies]
 python = "^3.10"
