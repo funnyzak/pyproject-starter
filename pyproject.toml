@@ -5,7 +5,21 @@ description = "a template for a python project. It uses poetry for dependency ma
 authors = ["Leon <silenceace@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "pdf_parse", from = "src"}, {include = "hello", from = "src"}]
+homepage = "https://funnyzak.github.io/pyproject-starter/"
+repository = "https://github.com/funnyzak/pyproject-starter"
+documentation = "https://funnyzak.github.io/pyproject-starter/"
+keywords = [
+    "pyproject",
+    "poetry",
+    "template",
+]
+packages = [
+  {include = "pdf_parse", from = "src"}, 
+  {include = "hello", from = "src"}
+]
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/funnyzak/pyproject-starter/issues"
 
 [tool.poetry.scripts]
 hello = "hello.main:hello"
@@ -19,6 +33,7 @@ isort = "^5.10.1"
 black = "^22.8.0"
 mypy = "^0.981"
 flake8 = "^5.0.4"
+Flake8-pyproject = "^1.1.0.post0"
 
 [build-system]
 requires = ["poetry-core"]
@@ -43,3 +58,85 @@ src_paths = ["src", "tests"]
 skip_glob = []
 filter_files = true
 known_first_party = "pdf_parse"
+
+[tool.flake8]
+max-line-length = 120
+max-complexity = 18
+count = true
+show-source = true
+statistics = true
+disable-noqa = false
+enable-extensions = [
+    'G', # flake8-logging-format
+]
+# it's not a bug that we aren't using all of hacking
+extend-ignore = [
+    # H101: Use TODO(NAME)
+    'H101',
+    # H202: assertRaises Exception too broad
+    'H202',
+    # H233: Python 3.x incompatible use of print operator
+    'H233',
+    # H301: one import per line
+    'H301',
+    # H306: imports not in alphabetical order (time, os)
+    'H306',
+    # H401: docstring should not start with a space
+    'H401',
+    # H403: multi line docstrings should end on a new line
+    'H403',
+    # H404: multi line docstring should start without a leading new line
+    'H404',
+    # H405: multi line docstring summary not separated with an empty line
+    'H405',
+    # H501: Do not use self.__dict__ for string formatting
+    'H501',
+    # F401: module imported but unused
+    'F401'
+]
+# 'select' defaults to: E,F,W,C90
+extend-select = [
+    # * Default warnings reported by flake8-bugbear (B) -
+    #   https://github.com/PyCQA/flake8-bugbear#list-of-warnings
+    'B',
+    # * The B950 flake8-bugbear opinionated warnings -
+    #   https://github.com/PyCQA/flake8-bugbear#opinionated-warnings
+    'B9',
+    #
+    # * Complexity violations reported by mccabe (C) -
+    #   http://flake8.pycqa.org/en/latest/user/error-codes.html#error-violation-codes
+    #   mccabe only ever reports one violation - C901 based on the complexity value
+    #   provided by the user.
+    #   This is selected by default.
+    #'C90',
+    #
+    # * Documentation conventions compliance reported by pydocstyle (D) -
+    #   http://www.pydocstyle.org/en/stable/error_codes.html
+    #'D', # FIXME TODO
+    #
+    # * Default errors reported by pycodestyle (E) -
+    #   https://pycodestyle.readthedocs.io/en/latest/intro.html#error-codes
+    #   This is selected by default.
+    #'E',
+    #
+    # * Default errors reported by pyflakes (F) -
+    #   http://flake8.pycqa.org/en/latest/user/error-codes.html
+    #   This is selected by default.
+    #'F',
+    #
+    # * flake8-mypy - enable limited type checking as a linter
+    #   http://flake8.pycqa.org/en/latest/user/error-codes.html
+    #'T4', # FIXME TODO
+    #
+    # * Default warnings reported by pycodestyle (W) -
+    #   https://pycodestyle.readthedocs.io/en/latest/intro.html#error-codes
+    #   This is selected by default.
+    #'W',
+]
+extend-exclude = [
+    '.github', '.gitlab',
+    '.Python', '.*.pyc', '.*.pyo', '.*.pyd', '.*.py.class', '*.egg-info',
+    'venv*', '.venv*', '.*_cache',
+    'lib', 'lib64', '.*.so',
+    'build', 'dist', 'sdist', 'wheels',
+]

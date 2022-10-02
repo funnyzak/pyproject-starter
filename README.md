@@ -16,7 +16,7 @@
 [rle-image]: https://img.shields.io/github/release-date/funnyzak/pyproject-starter.svg
 [rle-url]: https://github.com/funnyzak/pyproject-starter/releases/latest
 
-This is a template for a python project. It uses [poetry](https://python-poetry.org/) for dependency management.
+a template for a python project. It uses [poetry](https://python-poetry.org/) for dependency management and [tox](https://github.com/tox-dev/tox) for testing.
 
 ## Demo project
 
