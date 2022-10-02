@@ -5,12 +5,13 @@
 # usage: poetry run python src/pdf_parse/merge_pdf.py
 # notes:
 
-import os
 from datetime import datetime
+import os
 
 from PyPDF2 import PdfMerger
 
 from pdf_parse import create_sub_dir
+
 
 attachment_root = os.path.join(os.path.dirname(__file__), "attachments")
 txt_pdf_path = os.path.join(attachment_root, "whatispython.pdf")
