@@ -10,6 +10,10 @@ This is a simple tool to merge multiple PDF files into a single PDF file.
 ## Resources
 
 - [PyPDF2](https://pypdf2.readthedocs.io/en/latest/user/adding-pdf-annotations.html#free-text)
+- [flake8](https://flake8.pycqa.org/en/latest/)
+- [isort](https://pycqa.github.io/isort/)
+- [black](https://black.readthedocs.io/en/stable/)
+- [mypy](https://mypy.readthedocs.io/en/stable/)
 
 ## Author
 
