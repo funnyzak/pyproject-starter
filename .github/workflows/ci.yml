@@ -31,7 +31,7 @@ jobs:
           poetry-version: ${{ matrix.poetry-version }}
       - name: Install Project Dependencies
         run: |
-          poetry install --all-extras --with dev
+          poetry install --sync --all-extras --with dev
       - name: Lint with black
         run: |
           poetry run black ./src --check
