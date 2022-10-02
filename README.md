@@ -38,6 +38,8 @@ The project contains the following projects under `src`:
 poetry install --all-extras
 # Install dependencies with extras 'pdf'
 poetry install --extras "pdf"
+# Install dependencies with group 'dev'
+poetry install --with dev
 # Only install required dependencies
 poetry install
 

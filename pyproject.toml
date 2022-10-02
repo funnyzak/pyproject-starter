@@ -28,8 +28,12 @@ hello = "hello.main:hello"
 python = "^3.7"
 PyPDF2 = {optional = true, version = "^2.11.0" }
 
+# optional dependencies, which enhance a package, but are not required; and clusters of optional dependencies.
 [tool.poetry.extras]
 pdf = ["PyPDF2"]
+
+[tool.poetry.group.dev]
+optional = true
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.10.1"
@@ -37,6 +41,8 @@ black = "^22.8.0"
 mypy = "^0.981"
 flake8 = "^5.0.4"
 Flake8-pyproject = "^1.1.0.post0"
+flake8-bugbear = "^22.9.23"
+flake8-logging-format = "^0.8.1"
 
 [build-system]
 requires = ["poetry-core"]
@@ -54,7 +60,6 @@ extend-exclude = '''
   | \.mypy_cache
 )
 '''
-
 
 [tool.isort]
 profile = 'black'
