@@ -27,8 +27,8 @@ The project contains the following projects under `src`:
 
 ## Prerequisite
 
-- [Python 3](https://www.python.org/)
-- [poetry](https://python-poetry.org/)
+- [^Python 3.7](https://www.python.org/)
+- [^Poetry 1.2](https://python-poetry.org/)
 
 ## Usages
 
@@ -68,7 +68,7 @@ poetry run flake8 ./src
 ### Install
 
 #### install poetry
-  
+
 See [poetry installation](https://python-poetry.org/docs/#installation).
 
 #### install python3
