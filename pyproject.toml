@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "multi-layer-pdf"
+version = "0.1.0"
+description = "This is a simple tool to merge multiple PDF files into a single PDF file."
+authors = ["Leon <silenceace@gmail.com>"]
+readme = "README.md"
+packages = [{include = "multi_layer_pdf"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+PyPDF2 = "^2.11.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
