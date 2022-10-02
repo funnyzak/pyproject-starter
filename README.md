@@ -46,6 +46,9 @@ poetry install
 # Run project => hello
 poetry run hello
 
+# Ipdb debug "hello" project
+poetry run ipdb3 ./src/hello/main.py
+
 # Lint with black
 poetry run black ./src --check
 
