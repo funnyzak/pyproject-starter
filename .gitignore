@@ -30,6 +30,7 @@ logs/*.log
 build/
 develop-eggs/
 dist/
+**/*/dist/
 downloads/
 eggs/
 .eggs/
@@ -131,3 +132,7 @@ config.*.*
 !config.sample.*
 nohup.*
 app/**/docker-compose.yml
+
+/*.pdf
+
+/**/*/dist*.pdf

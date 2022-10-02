@@ -67,6 +67,18 @@ poetry run hello
 - [black](https://black.readthedocs.io/en/stable/): a Python code formatter.
 - [mypy](https://mypy.readthedocs.io/en/stable/config_file.html#per-module-and-global-options): a static type checker for Python.
 
+## FAQ
+
+### Install
+
+#### install poetry
+  
+See [poetry installation](https://python-poetry.org/docs/#installation).
+
+#### install python3
+
+See [python installation](https://www.python.org/downloads/).
+
 ## Contribution
 
 If you have any questions or suggestions, please feel free to open an issue or pull request.
@@ -74,16 +86,6 @@ If you have any questions or suggestions, please feel free to open an issue or p
 <a href="https://github.com/funnyzak/pyproject-starter/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=funnyzak/pyproject-starter" />
 </a>
-
-## FAQ
-
-### How to install poetry?
-  
-See [poetry installation](https://python-poetry.org/docs/#installation).
-
-### How to install python3?
-
-See [python installation](https://www.python.org/downloads/).
 
 ## License
 
