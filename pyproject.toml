@@ -1,16 +1,17 @@
 [tool.poetry]
-name = "multi-layer-pdf"
+name = "pyproject-starter"
 version = "0.1.0"
-description = "This is a simple tool to merge multiple PDF files into a single PDF file."
+description = "This is a template for a python project. It uses poetry for dependency management."
 authors = ["Leon <silenceace@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "multi_layer_pdf"}]
+packages = [{include = "multi_layer_pdf", from = "src"}]
+
+[tool.poetry.scripts]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 PyPDF2 = "^2.11.0"
-
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.10.1"
@@ -21,8 +22,6 @@ flake8 = "^5.0.4"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-
 
 [tool.black]
 line-length = 120
@@ -39,7 +38,7 @@ profile = "black"
 atomic = true
 include_trailing_comma = true
 use_parentheses = true
-src_paths = ["multi_layer_pdf", "tests"]
+src_paths = ["projects", "tests"]
 skip_glob = []
 filter_files = true
 known_first_party = "multi_layer_pdf"
