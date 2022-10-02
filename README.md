@@ -48,7 +48,7 @@ poetry install --with test,coverage
 poetry install
 
 # Install all dependencies
-poetry install --all-extras && poetry install --with dev,test,coverage
+poetry install --all-extras --with dev,test,coverage
 
 # Run project => hello
 poetry run hello
