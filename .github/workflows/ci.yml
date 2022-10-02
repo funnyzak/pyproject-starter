@@ -46,8 +46,7 @@ jobs:
           poetry run isort ./src --check
       - name: Check poetry lock file
         run: |
-          pip install poetry-lock-check==0.1.0
-          python -m poetry_lock_check check-lock
+          poetry lock --check
   run-project:
     runs-on: ${{ matrix.os }}
     strategy:

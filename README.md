@@ -50,10 +50,6 @@ poetry run isort ./src --check
 
 # Lint with flake8
 poetry run flake8 ./src --count --show-source --statistics --ignore=E501
-
-# Check install poetry lock file
-pip install poetry-lock-check==0.1.0
-python3 -m poetry_lock_check check-lock
 ```
 
 ## Project Usage
