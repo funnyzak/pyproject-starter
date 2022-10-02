@@ -3,6 +3,7 @@ name = "multi-layer-pdf"
 version = "0.1.0"
 description = "This is a simple tool to merge multiple PDF files into a single PDF file."
 authors = ["Leon <silenceace@gmail.com>"]
+license = "MIT"
 readme = "README.md"
 packages = [{include = "multi_layer_pdf"}]
 
