@@ -6,6 +6,7 @@
 # notes:
 
 import os
+
 from PyPDF2 import PdfReader, PdfWriter
 from PyPDF2.generic import AnnotationBuilder
 
