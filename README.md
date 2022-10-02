@@ -13,7 +13,7 @@ This is a simple tool to merge multiple PDF files into a single PDF file.
 - [flake8](https://flake8.pycqa.org/en/latest/)
 - [isort](https://pycqa.github.io/isort/)
 - [black](https://black.readthedocs.io/en/stable/)
-- [mypy](https://mypy.readthedocs.io/en/stable/)
+- [mypy](https://mypy.readthedocs.io/en/stable/config_file.html#per-module-and-global-options)
 
 ## Author
 
