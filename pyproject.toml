@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyproject-starter"
-version = "0.1.0"
+version = "0.1.1"
 description = "a template for a python project. It uses poetry for dependency management."
 authors = ["Leon <silenceace@gmail.com>"]
 license = "MIT"
