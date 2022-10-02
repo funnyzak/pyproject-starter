@@ -34,6 +34,11 @@ The project contains the following projects under `src`:
 
 ```bash
 # Install dependencies
+# Install dependencies with all extras
+poetry install --all-extras
+# Install dependencies with extras 'pdf'
+poetry install --extras "pdf"
+# Only install required dependencies
 poetry install
 
 # Run project => hello
