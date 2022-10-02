@@ -52,7 +52,7 @@ poetry run mypy ./src
 poetry run isort ./src --check
 
 # Lint with flake8
-poetry run flake8 ./src --count --show-source --statistics 
+poetry run flake8 ./src
 ```
 
 ## References

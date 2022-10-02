@@ -38,9 +38,9 @@ jobs:
       - name: Lint with mypy
         run: |
           poetry run mypy ./src
-      - name: Lint with flake8 --ignore=E501
+      - name: Lint with flake8
         run: |
-          poetry run flake8 ./src --count --show-source --statistics --ignore=E501
+          poetry run flake8 ./src 
       - name: Lint with isort
         run: |
           poetry run isort ./src --check
