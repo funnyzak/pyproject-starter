@@ -8,7 +8,5 @@ def create_sub_dir(dir_name):
         os.mkdir(dist_folder)
 
 
-if __name__ == "__main__":
-    print("module name:", __name__)
-
-create_sub_dir("dist")
+if __name__ != "__main__":
+    create_sub_dir("dist")
