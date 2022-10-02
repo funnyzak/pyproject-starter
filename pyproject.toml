@@ -8,7 +8,7 @@ readme = "README.md"
 packages = [{include = "pdf_parse", from = "src"}, {include = "hello", from = "src"}]
 
 [tool.poetry.scripts]
-hello = "hello.main:start"
+hello = "hello.main:hello"
 
 [tool.poetry.dependencies]
 python = "^3.10"

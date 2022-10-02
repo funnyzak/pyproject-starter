@@ -30,11 +30,14 @@ The project contains the following projects under `src`:
 - [Python 3](https://www.python.org/)
 - [poetry](https://python-poetry.org/)
 
-## Commands
+## Usages
 
 ```bash
 # Install dependencies
 poetry install
+
+# Run project => hello
+poetry run hello
 
 # Lint with black
 poetry run black ./src --check
@@ -50,13 +53,6 @@ poetry run isort ./src --check
 
 # Lint with flake8
 poetry run flake8 ./src --count --show-source --statistics 
-```
-
-## Project Usage
-
-```bash
-# Run Hello Project 
-poetry run hello
 ```
 
 ## References
