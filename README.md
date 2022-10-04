@@ -22,7 +22,8 @@ A template for the python project. It uses [poetry](https://python-poetry.org/) 
 
 - Use [poetry](https://python-poetry.org/) for dependency management.
 - Use tox、pytest、pytest-cov、coverage for testing.
-- Use black、flake8、isort for code formatting.
+- Use black、isort for code formatting.
+- Use flake8 for linting.
 - Use mypy for static type checking.
 - Use [pre-commit](https://pre-commit.com/) for code quality.
 - Use ipdb3 for debugging.
