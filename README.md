@@ -1,10 +1,11 @@
-# PyPoject Starter
+# PyPoject Starter 🚀
 
 [![Build Status][build-status-image]][build-status]
 [![license][license-image]][repository-url]
-[![Sourcegraph][sg-image]][sg-url]
 [![Release Date][rle-image]][rle-url]
 [![GitHub repo size][repo-size-image]][repository-url]
+[![Sourcegraph][sg-image]][sg-url]
+<!-- [![codecov](https://codecov.io/gh/funnyzak/pyproject-starter/branch/main/graph/badge.svg?token=K1AKZ65LY1)](https://codecov.io/gh/funnyzak/pyproject-starter) -->
 
 A template for the python project. It uses [poetry](https://python-poetry.org/) for dependency management and [tox](https://github.com/tox-dev/tox) for testing.
 
@@ -20,6 +21,8 @@ A template for the python project. It uses [poetry](https://python-poetry.org/) 
 
 ## Features
 
+Some features in this template project:
+
 - Use [poetry](https://python-poetry.org/) for dependency management.
 - Use tox、pytest、pytest-cov、coverage for testing.
 - Use black、isort for code formatting.
@@ -28,7 +31,7 @@ A template for the python project. It uses [poetry](https://python-poetry.org/) 
 - Use [pre-commit](https://pre-commit.com/) for code quality.
 - Use ipdb3 for debugging.
 - Multiple python versions support(Python 3.7+).
-- More features to be added.
+- More features to be added 🚀 .
 
 ## Project
 
@@ -39,8 +42,8 @@ Contains the following projects under `src` as demo:
 
 ## Prerequisite
 
-- [^Python 3.7](https://www.python.org/)
-- [^Poetry 1.2](https://python-poetry.org/)
+- [Python 3.7+](https://www.python.org/)
+- [Poetry 1.2](https://python-poetry.org/)
 - [pre-commit](https://pre-commit.com/)
 
 ## Installation
@@ -85,9 +88,13 @@ poetry run mergepdf
 poetry run ipdb3 ./src/hello/main.py
 
 # Code test
-poetry run pytest
-# or coverage test
+poetry run pytest -s
+
+# or default coverage test
 poetry run tox
+
+# or coverage test with specific Environment
+poetry run tox -e dev
 
 # Lint with black
 poetry run black ./src --check
