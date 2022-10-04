@@ -1,4 +1,4 @@
-# pyroject starter
+# PyPoject Starter
 
 [![Build Status][build-status-image]][build-status]
 [![license][license-image]][repository-url]
@@ -18,9 +18,9 @@ A template for the python project. It uses [poetry](https://python-poetry.org/) 
 [rle-image]: https://img.shields.io/github/release-date/funnyzak/pyproject-starter.svg
 [rle-url]: https://github.com/funnyzak/pyproject-starter/releases/latest
 
-## Demo project
+## Project
 
-The project contains the following projects under `src`:
+Contains the following projects under `src` as demo:
 
 - [Hello](https://github.com/funnyzak/pyproject-starter/tree/main/src/hello) is a simple hello world project.
 - [PDF_Parse](https://github.com/funnyzak/pyproject-starter/tree/main/src/pdf_parse) is a project that parse pdf.
@@ -30,22 +30,29 @@ The project contains the following projects under `src`:
 - [^Python 3.7](https://www.python.org/)
 - [^Poetry 1.2](https://python-poetry.org/)
 
-## Usages
+## Installation
 
 ```bash
-# Install dependencies
-# Install dependencies with all extras
-poetry install --all-extras
-# Install dependencies with extras 'pdf'
-poetry install --extras "pdf"
-# Install dependencies with group 'dev'、'test'
-poetry install --with dev,test
-# Only install required dependencies
-poetry install
+# Clone the repository
+git clone git@github.com:funnyzak/pyproject-starter.git && cd pyproject-starter
 
 # Install all dependencies
 poetry install --sync --all-extras --with dev,test,coverage
 
+# Other useful installation dependencies commands
+# Install dependencies with all extras
+poetry install --all-extras
+# Install dependencies with extras 'pdf' for pdf_parse project
+poetry install --extras "pdf"
+# Install dependencies with group 'dev'、'test' for development
+poetry install --with dev,test
+# Only install required dependencies for production
+poetry install
+```
+
+## Usage
+
+```bash
 # Run project => hello
 poetry run hello
 
@@ -75,17 +82,17 @@ poetry run flake8 ./src
 
 ## References
 
-- [PyPDF2](https://pypdf2.readthedocs.io/en/latest/user/adding-pdf-annotations.html#free-text): a library for working with PDF files.
-- [flake8](https://flake8.pycqa.org/en/latest/): a wrapper around these tools: PyFlakes, pycodestyle, and Ned Batchelder’s McCabe script.
-- [isort](https://pycqa.github.io/isort/): a Python utility / library to sort imports alphabetically, and automatically separated into sections and by type.
-- [black](https://black.readthedocs.io/en/stable/): a Python code formatter.
-- [mypy](https://mypy.readthedocs.io/en/stable/config_file.html#per-module-and-global-options): a static type checker for Python.
-- [pytest](https://docs.pytest.org/en/stable/): a testing framework for Python.
-- [ipdb](https://pypi.org/project/ipdb/): a IPython-enabled pdb.
+- [PyPDF2](https://pypdf2.readthedocs.io/en/latest/user/adding-pdf-annotations.html#free-text) is a library for working with PDF files.
+- [flake8](https://flake8.pycqa.org/en/latest/) is a wrapper around these tools: PyFlakes, pycodestyle, and Ned Batchelder’s McCabe script.
+- [isort](https://pycqa.github.io/isort/) is a Python utility / library to sort imports alphabetically, and automatically separated into sections and by type.
+- [black](https://black.readthedocs.io/en/stable/) is a Python code formatter.
+- [mypy](https://mypy.readthedocs.io/en/stable/config_file.html#per-module-and-global-options) is a static type checker for Python.
+- [pytest](https://docs.pytest.org/en/stable/) is a testing framework for Python.
+- [ipdb](https://pypi.org/project/ipdb/) is a IPython-enabled pdb.
 
 ## FAQ
 
-### Install
+### Environment setup
 
 #### install poetry
 
