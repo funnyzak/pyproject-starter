@@ -9,4 +9,4 @@ def create_sub_dir(dir_name):
 
 
 if __name__ != "__main__":
-    create_sub_dir("dist")
+    print("pdf_parse project")
