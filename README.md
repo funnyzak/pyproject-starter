@@ -1,13 +1,15 @@
 # pyroject starter
 
-[![license][license-image]][repository-url]
 [![Build Status][build-status-image]][build-status]
+[![license][license-image]][repository-url]
 [![Sourcegraph][sg-image]][sg-url]
 [![Release Date][rle-image]][rle-url]
 [![GitHub repo size][repo-size-image]][repository-url]
 
+A template for the python project. It uses [poetry](https://python-poetry.org/) for dependency management and [tox](https://github.com/tox-dev/tox) for testing.
+
 [repo-size-image]: https://img.shields.io/github/repo-size/funnyzak/pyproject-starter
-[build-status-image]: https://img.shields.io/github/workflow/status/funnyzak/pyproject-starter/CI
+[build-status-image]:  https://github.com/funnyzak/pyproject-starter/actions/workflows/ci.yml/badge.svg
 [build-status]: https://github.com/funnyzak/pyproject-starter/actions
 [license-image]: https://img.shields.io/github/license/funnyzak/pyproject-starter.svg?style=flat-square
 [repository-url]: https://github.com/funnyzak/pyproject-starter
@@ -15,8 +17,6 @@
 [sg-url]: https://sourcegraph.com/github.com/funnyzak/pyproject-starter
 [rle-image]: https://img.shields.io/github/release-date/funnyzak/pyproject-starter.svg
 [rle-url]: https://github.com/funnyzak/pyproject-starter/releases/latest
-
-a template for a python project. It uses [poetry](https://python-poetry.org/) for dependency management and [tox](https://github.com/tox-dev/tox) for testing.
 
 ## Demo project
 
@@ -33,13 +33,13 @@ The project contains the following projects under `src`:
 ## Usages
 
 ```bash
-# dependencies
+# Install dependencies
 # Install dependencies with all extras
 poetry install --all-extras
 # Install dependencies with extras 'pdf'
 poetry install --extras "pdf"
-# Install dependencies with group 'dev'
-poetry install --with dev
+# Install dependencies with group 'dev'、'test'
+poetry install --with dev,test
 # Only install required dependencies
 poetry install
 
@@ -49,10 +49,10 @@ poetry install --sync --all-extras --with dev,test,coverage
 # Run project => hello
 poetry run hello
 
-# Ipdb debug "hello" project
+# Debug "hello" project with ipdb3
 poetry run ipdb3 ./src/hello/main.py
 
-# Test
+# Code test
 poetry run pytest
 # or coverage test
 poetry run tox
@@ -60,7 +60,7 @@ poetry run tox
 # Lint with black
 poetry run black ./src --check
 
-# Format with black
+# Format code with black
 poetry run black ./src
 
 # Check with mypy
@@ -80,7 +80,7 @@ poetry run flake8 ./src
 - [isort](https://pycqa.github.io/isort/): a Python utility / library to sort imports alphabetically, and automatically separated into sections and by type.
 - [black](https://black.readthedocs.io/en/stable/): a Python code formatter.
 - [mypy](https://mypy.readthedocs.io/en/stable/config_file.html#per-module-and-global-options): a static type checker for Python.
-- [Pytest](https://docs.pytest.org/en/stable/): a testing framework for Python.
+- [pytest](https://docs.pytest.org/en/stable/): a testing framework for Python.
 - [ipdb](https://pypi.org/project/ipdb/): a IPython-enabled pdb.
 
 ## FAQ
