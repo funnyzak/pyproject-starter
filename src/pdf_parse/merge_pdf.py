@@ -5,12 +5,13 @@
 # usage: poetry run python src/pdf_parse/merge_pdf.py
 # notes:
 
+import argparse
 from datetime import datetime
 import os
 import random
-import argparse
 
 from PyPDF2 import PdfMerger
+
 
 # merget pdf files class
 class MergePdf:
@@ -72,15 +73,13 @@ def test_merge_pdf():
 
     # fill pdf files
     pdf_files = []
-    for i in range(random.randint(3, 12)):
+    for _item in range(random.randint(3, 12)):
         pdf_files.append(txt_pdf_path)
         if random.randint(0, 1) == 1:
             pdf_files.append(pic_pdf_path)
     # shuffle pdf files
     random.shuffle(pdf_files)
 
-    # merger
-    merger = PdfMerger()
     # merge pdf files
     merge_pdf = MergePdf(pdf_files, output_dir)
     merge_pdf.merge()
