@@ -1,4 +1,4 @@
-# PyPoject Starter 🚀
+# PyPoject Starter
 
 [![Build Status][build-status-image]][build-status]
 [![license][license-image]][repository-url]
