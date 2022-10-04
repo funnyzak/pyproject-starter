@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "pyproject-starter"
 version = "0.1.1"
-description = "a template for a python project. It uses poetry for dependency management."
+description = "A template for the python project. It uses poetry for dependency management and tox for testing."
 authors = ["Leon <silenceace@gmail.com>"]
 license = "MIT"
 readme = "README.md"
@@ -10,8 +10,10 @@ repository = "https://github.com/funnyzak/pyproject-starter"
 documentation = "https://funnyzak.github.io/pyproject-starter/"
 keywords = [
     "pyproject",
-    "poetry",
-    "template",
+    "poetry-project",
+    "pyproject-starter",
+    "python-project-starter",
+    "python-project-template",
 ]
 packages = [
   {include = "pdf_parse", from = "src"},

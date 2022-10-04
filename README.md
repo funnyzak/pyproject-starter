@@ -22,8 +22,8 @@ A template for the python project. It uses [poetry](https://python-poetry.org/) 
 
 The project contains the following projects under `src`:
 
-- [Hello](https://github.com/funnyzak/pyproject-starter/tree/main/src/hello): a simple hello world project
-- [PDF_Parse](https://github.com/funnyzak/pyproject-starter/tree/main/src/pdf_parse): a project that parse pdf.
+- [Hello](https://github.com/funnyzak/pyproject-starter/tree/main/src/hello) is a simple hello world project.
+- [PDF_Parse](https://github.com/funnyzak/pyproject-starter/tree/main/src/pdf_parse) is a project that parse pdf.
 
 ## Prerequisite
 

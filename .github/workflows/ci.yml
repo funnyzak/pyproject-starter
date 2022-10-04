@@ -101,7 +101,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          configuration: 'config/changelog_configuration.json'
+          configuration: '.github/config/changelog_configuration.json'
           ignorePreReleases: 'false'
       - name: Package release
         uses: papeloto/action-zip@v1
