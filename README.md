@@ -18,6 +18,15 @@ A template for the python project. It uses [poetry](https://python-poetry.org/) 
 [rle-image]: https://img.shields.io/github/release-date/funnyzak/pyproject-starter.svg
 [rle-url]: https://github.com/funnyzak/pyproject-starter/releases/latest
 
+## Features
+
+- Use [poetry](https://python-poetry.org/) for dependency management.
+- Use tox、pytest、pytest-cov、coverage for testing.
+- Use black、flake8、isort for code formatting.
+- Use mypy for static type checking.
+- Use [pre-commit](https://pre-commit.com/) for code quality.
+- Use ipdb3 for debugging.
+
 ## Project
 
 Contains the following projects under `src` as demo:
@@ -55,6 +64,9 @@ poetry install
 ```bash
 # Run project => hello
 poetry run hello
+
+# Run project => pdf_parse: merge pdf
+poetry run mergepdf
 
 # Debug "hello" project with ipdb3
 poetry run ipdb3 ./src/hello/main.py
