@@ -45,6 +45,10 @@ Contains the following projects under `src` as demo:
 
 ## Installation
 
+following the steps below to setup the project:
+
+```bash
+
 ```bash
 # Clone the repository
 git clone git@github.com:funnyzak/pyproject-starter.git && cd pyproject-starter
@@ -64,6 +68,8 @@ poetry install
 ```
 
 ## Usage
+
+There are some useful commands for development:
 
 ```bash
 # Run project => hello
@@ -98,6 +104,8 @@ poetry run flake8 ./src
 
 ## References
 
+some useful references:
+
 - [PyPDF2](https://pypdf2.readthedocs.io/en/latest/user/adding-pdf-annotations.html#free-text) is a library for working with PDF files.
 - [flake8](https://flake8.pycqa.org/en/latest/) is a wrapper around these tools: PyFlakes, pycodestyle, and Ned Batchelder’s McCabe script.
 - [isort](https://pycqa.github.io/isort/) is a Python utility / library to sort imports alphabetically, and automatically separated into sections and by type.
@@ -107,6 +115,16 @@ poetry run flake8 ./src
 - [ipdb](https://pypi.org/project/ipdb/) is a IPython-enabled pdb.
 
 ## FAQ
+
+### Development
+
+### How to add a new project?
+
+1. Create a new folder under `src` folder.
+2. You can copy the `hello` project as a template.
+3. Add folder name to `packages` in `pyproject.toml` file.
+4. Code and test it.
+5. You can create test cases for the new project in `tests` folder.
 
 ### Environment setup
 
