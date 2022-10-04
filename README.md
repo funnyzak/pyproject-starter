@@ -27,6 +27,8 @@ A template for the python project. It uses [poetry](https://python-poetry.org/) 
 - Use mypy for static type checking.
 - Use [pre-commit](https://pre-commit.com/) for code quality.
 - Use ipdb3 for debugging.
+- Multiple python versions support(Python 3.7+).
+- More features to be added.
 
 ## Project
 
@@ -39,6 +41,7 @@ Contains the following projects under `src` as demo:
 
 - [^Python 3.7](https://www.python.org/)
 - [^Poetry 1.2](https://python-poetry.org/)
+- [pre-commit](https://pre-commit.com/)
 
 ## Installation
 
@@ -114,6 +117,10 @@ See [poetry installation](https://python-poetry.org/docs/#installation).
 #### install python3
 
 See [python installation](https://www.python.org/downloads/).
+
+#### install pre-commit
+
+See [pre-commit installation](https://pre-commit.com/#install).
 
 ## Contribution
 
