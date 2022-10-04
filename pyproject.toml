@@ -48,6 +48,7 @@ flake8-bugbear = "^22.9.23"
 flake8-logging-format = "^0.8.1"
 ipdb = "^0.13.9"
 tox = "^3.26.0"
+pre-commit = "^2.20.0"
 
 [tool.poetry.group.test]
 optional = true
