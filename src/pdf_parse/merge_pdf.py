@@ -8,6 +8,7 @@
 from datetime import datetime
 import os
 import random
+import argparse
 
 from PyPDF2 import PdfMerger
 
@@ -59,6 +60,8 @@ class MergePdf:
         if not os.path.exists(self.output_dir):
             os.makedirs(self.output_dir)
 
+
+# test merge pdf files
 def test_merge_pdf():
     # get path top level directory
     root_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
@@ -71,7 +74,8 @@ def test_merge_pdf():
     pdf_files = []
     for i in range(random.randint(3, 12)):
         pdf_files.append(txt_pdf_path)
-        if random.randint(0, 1) == 1: pdf_files.append(pic_pdf_path)
+        if random.randint(0, 1) == 1:
+            pdf_files.append(pic_pdf_path)
     # shuffle pdf files
     random.shuffle(pdf_files)
 
@@ -81,7 +85,24 @@ def test_merge_pdf():
     merge_pdf = MergePdf(pdf_files, output_dir)
     merge_pdf.merge()
 
-if __name__ == "__main__":
-    test_merge_pdf()
-    # print message have color
 
+if __name__ == "__main__":
+    # use "-i" got pdf files, use "-o" got output directory
+    parser = argparse.ArgumentParser(description="Merge pdf files")
+    parser.add_argument("-i", "--input", help="input pdf files", nargs="+", required=False)
+    parser.add_argument("-o", "--output", help="output directory", required=False)
+
+    args = parser.parse_args()
+
+    pdf_files = args.input
+    output_dir = args.output
+
+    # if args not set, use stdin to get pdf files and output directory
+    if pdf_files is None:
+        pdf_files = input("input pdf files path, split by space: ").split(" ")
+    if output_dir is None:
+        output_dir = input("input output directory: ")
+
+    # merge pdf files
+    merge_pdf = MergePdf(pdf_files, output_dir)
+    merge_pdf.merge()
