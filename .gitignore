@@ -8,7 +8,6 @@ _build
 .pytest_cache
 .DS_Store
 .idea/*
-.vscode/*
 /test.py
 /test_*.*
 /setup.cfg
