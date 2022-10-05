@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-import os
-
 import pytest
 
 from pdf_parse import merge_pdf
+import test_pdf_parse as tpp
 
 
 @pytest.fixture(scope="function", autouse=False)
@@ -29,7 +28,7 @@ def test_file_not_found():
 
 def test_file_not_pdf():
     pdf_files = [
-        os.path.join(os.path.dirname(__file__), "merge_pdf_test.py"),
+        __file__,
     ]
     output_dir = "out_dir"
 
@@ -41,12 +40,10 @@ def test_file_not_pdf():
 
 @pytest.mark.usefixtures("merge_pdf_function_scope")
 def test_merge_pdf():
-    # get path top level directory
-    root_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
-    attachment_dir = os.path.join(root_dir, "public/attachments")
-    txt_pdf_path = os.path.join(attachment_dir, "whatispython.pdf")
-    output_dir = os.path.join(root_dir, "dist/pdf_parse")
-
     # fill pdf files
-    pdf_files = [txt_pdf_path]
-    merge_pdf.MergePdf(pdf_files, output_dir).merge()
+    merge_pdf.MergePdf([tpp.demo_pic_pdf_path, tpp.demo_pic_pdf_path], tpp.test_dist_path).merge()
+
+
+def test_merge_pdf_demo_func():
+    # test merge pdf def in merge_pdf
+    merge_pdf.test_merge_pdf()

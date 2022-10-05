@@ -17,10 +17,14 @@ from PyPDF2.generic import AnnotationBuilder
 class AddPdfAnnotation:
     # @param {string} source_pdf_path - source pdf file path
     # @param {string} output_pdf_path - output pdf file path
-    def __init__(self, source_pdf_path, output_pdf_path):
+    def __init__(self, source_pdf_path, output_pdf_path=None):
         self.check_file(source_pdf_path)
         self.source_pdf_path = source_pdf_path
-        self.output_pdf_path = output_pdf_path
+        self.output_pdf_path = (
+            output_pdf_path
+            if output_pdf_path not in [None, ""] and output_pdf_path.endswith(".pdf")
+            else f"{source_pdf_path.split('.pdf')[0]}_annotated.pdf"
+        )
 
     # add annotation to pdf file
     def add_annotation(self, annotation_list: list):
@@ -44,6 +48,7 @@ class AddPdfAnnotation:
         with open(self.output_pdf_path, "wb") as fp:
             writer.write(fp)
             print(f"Annotated PDF written to {self.output_pdf_path}")
+        return self.output_pdf_path
 
     # check file exist and if pdf file
     def check_file(self, file_path: str):
@@ -79,4 +84,4 @@ def add_pdf_annotiation_demo():
 
 
 if __name__ == "__main__":
-    add_pdf_annotiation_demo()
+    add_pdf_annotiation_demo()  # pragma: no cover

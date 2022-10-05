@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # created by: leon<silenceace at gmail dot com>
 # date: 2022-10-02
 # license: MIT
@@ -87,7 +88,7 @@ def test_merge_pdf():
 
 if __name__ == "__main__":
     # use "-i" got pdf files, use "-o" got output directory
-    parser = argparse.ArgumentParser(description="Merge pdf files")
+    parser = argparse.ArgumentParser(description="Merge pdf files")  # pragma: no cover
     parser.add_argument("-i", "--input", help="input pdf files", nargs="+", required=False)
     parser.add_argument("-o", "--output", help="output directory", required=False)
 
