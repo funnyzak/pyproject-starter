@@ -1,22 +1,27 @@
 # PyPoject Starter
 
-[![Build Status][build-status-image]][build-status]
-[![codecov](https://codecov.io/gh/funnyzak/pyproject-starter/branch/main/graph/badge.svg?token=K1AKZ65LY1)](https://codecov.io/gh/funnyzak/pyproject-starter)
 [![license][license-image]][repository-url]
-[![Release Date][rle-image]][rle-url]
+[![Build Status][build-status-image]][build-status]
+[![codecov][cov-image]][cov-url]
+[![Documentation Status][doc-image]][doc-url]
 [![GitHub repo size][repo-size-image]][repository-url]
+[![Release][rle-image]][rle-url]
 <!-- [![Sourcegraph][sg-image]][sg-url] -->
 
 A template for the python project. It uses [poetry](https://python-poetry.org/) for dependency management and [tox](https://github.com/tox-dev/tox) for testing.
 
-[repo-size-image]: https://img.shields.io/github/repo-size/funnyzak/pyproject-starter
+[cov-image]: https://codecov.io/gh/funnyzak/pyproject-starter/branch/main/graph/badge.svg?token=K1AKZ65LY1
+[cov-url]: https://codecov.io/gh/funnyzak/pyproject-starter
+[doc-image]: https://readthedocs.org/projects/pyproject-starter/badge/?version=latest&style=flat
+[doc-url]: https://pyproject-starter.readthedocs.io/en/latest/?badge=latest
+[repo-size-image]: https://img.shields.io/github/repo-size/funnyzak/pyproject-starter?style=flat-square&logo=github&logoColor=white&label=size
 [build-status-image]:  https://github.com/funnyzak/pyproject-starter/actions/workflows/ci.yml/badge.svg
 [build-status]: https://github.com/funnyzak/pyproject-starter/actions
 [license-image]: https://img.shields.io/github/license/funnyzak/pyproject-starter.svg?style=flat-square
 [repository-url]: https://github.com/funnyzak/pyproject-starter
 [sg-image]: https://img.shields.io/badge/view%20on-Sourcegraph-brightgreen.svg?style=flat-square
 [sg-url]: https://sourcegraph.com/github.com/funnyzak/pyproject-starter
-[rle-image]: https://img.shields.io/github/release-date/funnyzak/pyproject-starter.svg
+[rle-image]: https://img.shields.io/github/release-date/funnyzak/pyproject-starter.svg?style=flat-square&label=release
 [rle-url]: https://github.com/funnyzak/pyproject-starter/releases/latest
 
 ## Features
