@@ -33,10 +33,15 @@ repos:
     rev: 'v4.3.0'
     hooks:
       - id: check-ast
+      - id: check-toml
       - id: end-of-file-fixer
       - id: trailing-whitespace
       - id: check-yaml
       - id: check-added-large-files
+        args: ['--maxkb=4096']
       - id: check-case-conflict
       - id: check-json
       - id: check-xml
+      - id: fix-encoding-pragma
+      - id: name-tests-test
+        args: ['--pytest']

@@ -123,6 +123,7 @@ some useful references:
 - [mypy](https://mypy.readthedocs.io/en/stable/config_file.html#per-module-and-global-options) is a static type checker for Python.
 - [pytest](https://docs.pytest.org/en/stable/) is a testing framework for Python.
 - [ipdb](https://pypi.org/project/ipdb/) is a IPython-enabled pdb.
+- [pre-commit](https://pre-commit.com/) is a framework for managing and maintaining multi-language pre-commit hooks.
 
 ## FAQ
 
