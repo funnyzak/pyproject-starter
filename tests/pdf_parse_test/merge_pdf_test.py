@@ -29,7 +29,7 @@ def test_file_not_found():
 
 def test_file_not_pdf():
     pdf_files = [
-        os.path.join(os.path.dirname(__file__), "test_merge_pdf.py"),
+        os.path.join(os.path.dirname(__file__), "merge_pdf_test.py"),
     ]
     output_dir = "out_dir"
 
