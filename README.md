@@ -1,11 +1,11 @@
 # PyPoject Starter
 
 [![Build Status][build-status-image]][build-status]
+[![codecov](https://codecov.io/gh/funnyzak/pyproject-starter/branch/main/graph/badge.svg?token=K1AKZ65LY1)](https://codecov.io/gh/funnyzak/pyproject-starter)
 [![license][license-image]][repository-url]
 [![Release Date][rle-image]][rle-url]
 [![GitHub repo size][repo-size-image]][repository-url]
-[![Sourcegraph][sg-image]][sg-url]
-<!-- [![codecov](https://codecov.io/gh/funnyzak/pyproject-starter/branch/main/graph/badge.svg?token=K1AKZ65LY1)](https://codecov.io/gh/funnyzak/pyproject-starter) -->
+<!-- [![Sourcegraph][sg-image]][sg-url] -->
 
 A template for the python project. It uses [poetry](https://python-poetry.org/) for dependency management and [tox](https://github.com/tox-dev/tox) for testing.
 
