@@ -1,11 +1,12 @@
 # PyPoject Starter
 
-[![license][license-image]][repository-url]
 [![Build Status][build-status-image]][build-status]
-[![codecov][cov-image]][cov-url]
+[![license][license-image]][repository-url]
 [![Documentation Status][doc-image]][doc-url]
 [![GitHub repo size][repo-size-image]][repository-url]
-[![Release][rle-image]][rle-url]
+[![codecov][cov-image]][cov-url]
+
+<!-- [![Release][rle-image]][rle-url] -->
 <!-- [![Sourcegraph][sg-image]][sg-url] -->
 
 A template for the python project. It uses [poetry](https://python-poetry.org/) for dependency management and [tox](https://github.com/tox-dev/tox) for testing.
@@ -137,7 +138,7 @@ some useful references:
   - running your tests in each of the environments, configuring your test tool of choice
   - acting as a frontend to Continuous Integration servers, greatly reducing boilerplate and merging CI and shell-based testing.
 
-## FAQ
+## Q&A
 
 ### Development
 
