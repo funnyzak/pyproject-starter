@@ -1,4 +1,4 @@
-name: Project-Hello
+name: Run Project
 
 on:
   push:
@@ -8,19 +8,19 @@ on:
       - '*'
   workflow_dispatch:
     inputs:
-      tox_env:
-        description: 'Run tox'
+      script_name:
+        description: 'poetry script name'
         required: true
-        default: 'true' # or false
+        default: '' # or false
 
 env:
-  PRJ_NAME: hello
+  POETRY_SCRIPT_NAME_LIST: 'hello,mergepdf,addpdfannotation'
 
 jobs:
   run-project:
     name: Run project on ${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
-    if: github.event.inputs.tox_env == 'true' || github.event_name == 'push'
+    if: github.event_name == 'push' || github.event.inputs.script_name != ''
     strategy:
       matrix:
         python-version: ['3.7', '3.8', '3.9', '3.10']
@@ -41,10 +41,20 @@ jobs:
           poetry-version: ${{ matrix.poetry-version }}
       - name: Install dependencies
         run: |
-          poetry install
-      - name: Run project
+          poetry install --sync --all-extras
+      - name: Run poetry script
         run: |
-          poetry run hello
+          if [ -z "${{ github.event.inputs.script_name }}" ]; then
+            echo "No script name provided, running all scripts"
+            for script_name in $(echo ${{ env.POETRY_SCRIPT_NAME_LIST }} | tr "," "
+            do
+              echo "Running poetry script $script_name"
+              poetry run $script_name
+            done
+          else
+            echo "Running poetry script ${{ github.event.inputs.script_name }}"
+            poetry run ${{ github.event.inputs.script_name }}
+          fi
 
   push-run-message:
     name: Push run message
@@ -57,7 +67,9 @@ jobs:
           platforms: ifttt,wecombot,bark
           tokens: ${{ secrets.PUSH_TOKEN }}
           content: |
-            # ${{ github.event.repository.name }} Prj ${{ env.PRJ_NAME }} Run Message
+            # ${{ github.event.repository.name }} Run Project Message
+            ## input script name: ${{ github.event.inputs.script_name }}
+            ## POETRY_SCRIPT_NAME_LIST: ${{ env.POETRY_SCRIPT_NAME_LIST }}
             ## trigger: ${{ github.event_name }} at ${{ github.event.head_commit.timestamp }}
             ## commit message: ${{ github.event.head_commit.message }}
             ## commit url: ${{ github.event.head_commit.url }}
