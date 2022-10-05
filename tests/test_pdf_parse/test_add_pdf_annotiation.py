@@ -27,7 +27,7 @@ def test_output_pdf_not_specified():
 
 
 # test output pdf specified but not exist
-def test_output_pdf_specified():
+def test_output_pdf_specified_but_not_exist():
     output_pdf = os.path.join(
         tpp.test_dist_path, "test_output_pdf_specified_" + f"{str(int(datetime.datetime.now().timestamp()))}.pdf"
     )
