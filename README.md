@@ -95,11 +95,11 @@ poetry run ipdb3 ./src/hello/main.py
 # Code test
 poetry run pytest -s
 
-# or default coverage test
+# Run default coverage test
 poetry run tox
 
-# or coverage test with specific Environment
-poetry run tox -e dev
+# Run hello project coverage test at python 3.9 and 3.10
+poetry run tox -e py{39,310}-hello
 
 # Lint with black
 poetry run black ./src --check
