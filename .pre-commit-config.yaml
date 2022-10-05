@@ -44,4 +44,4 @@ repos:
       - id: check-xml
       - id: fix-encoding-pragma
       - id: name-tests-test
-        args: ['--pytest']
+        args: ['--pytest-test-first']
