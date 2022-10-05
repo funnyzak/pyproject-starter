@@ -11,7 +11,7 @@ on:
       script_name:
         description: 'poetry script name'
         required: true
-        default: '' # or false
+        default: ''
 
 env:
   POETRY_SCRIPT_NAME_LIST: 'hello,mergepdf,addpdfannotation'
