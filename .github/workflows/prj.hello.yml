@@ -42,9 +42,12 @@ jobs:
       - name: Install dependencies
         run: |
           poetry install --sync --all-extras --with dev,coverage,test
-      - name: Run tests and collect coverage
+      - name: Run tox tests
         run: |
           poetry run tox -e ${{ env.TOXENV }}
+      - name: Run project
+        run: |
+          poetry run hello
 
   push-tox-test:
     name: Push tox test
