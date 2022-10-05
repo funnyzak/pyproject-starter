@@ -1,5 +1,5 @@
+# -*- coding: utf-8 -*-
 import os
-import time
 
 import pytest
 
@@ -39,7 +39,7 @@ def test_file_not_pdf():
     assert exec_msg.index("not pdf file") != -1
 
 
-@pytest.mark.usefixtures('merge_pdf_function_scope')
+@pytest.mark.usefixtures("merge_pdf_function_scope")
 def test_merge_pdf():
     # get path top level directory
     root_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))

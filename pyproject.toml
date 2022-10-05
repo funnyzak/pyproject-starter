@@ -16,8 +16,8 @@ keywords = [
     "python-project-template",
 ]
 packages = [
-  {include = "pdf_parse", from = "src"},
-  {include = "hello", from = "src"}
+    { include = "pdf_parse", from = "src" },
+    { include = "hello", from = "src" },
 ]
 
 [tool.poetry.urls]
@@ -29,7 +29,7 @@ mergepdf = "pdf_parse.merge_pdf:test_merge_pdf"
 
 [tool.poetry.dependencies]
 python = "^3.7"
-PyPDF2 = {optional = true, version = "^2.11.0" }
+PyPDF2 = { optional = true, version = "^2.11.0" }
 
 # optional dependencies, which enhance a package, but are not required; and clusters of optional dependencies.
 [tool.poetry.extras]
@@ -70,12 +70,8 @@ build-backend = "poetry.core.masonry.api"
 [tool.pytest.ini_options]
 minversion = "6.0"
 addopts = "-ra -vvv"
-testpaths = [
-    "tests",
-]
-pythonpath = [
-    "tests",
-]
+testpaths = ["tests"]
+pythonpath = ["tests"]
 
 [tool.black]
 line-length = 120
@@ -99,8 +95,8 @@ profile = 'black'
 #   use_parentheses = true
 #   ensure_newline_before_comments = true
 #   line_length = 88
-line_length = 120  # override black provile line_length
-force_single_line = false  # override black profile multi_line_output
+line_length = 120                 # override black provile line_length
+force_single_line = false         # override black profile multi_line_output
 star_first = true
 group_by_package = true
 force_sort_within_sections = true
@@ -110,10 +106,7 @@ honor_noqa = true
 atomic = true
 ignore_comments = true
 skip_gitignore = true
-src_paths = [
-    'src',
-    'tests',
-]
+src_paths = ['src', 'tests']
 known_first_party = "pdf_parse"
 
 
@@ -140,7 +133,7 @@ extend-ignore = [
     # H306: imports not in alphabetical order (time, os)
     'H306',
     # H401: docstring should not start with a space
-    'H401',
+    # 'H401',
     # H403: multi line docstrings should end on a new line
     'H403',
     # H404: multi line docstring should start without a leading new line
@@ -150,7 +143,7 @@ extend-ignore = [
     # H501: Do not use self.__dict__ for string formatting
     'H501',
     # F401: module imported but unused
-    'F401'
+    #'F401'
 ]
 # 'select' defaults to: E,F,W,C90
 extend-select = [
@@ -192,9 +185,22 @@ extend-select = [
     #'W',
 ]
 extend-exclude = [
-    '.github', '.gitlab',
-    '.Python', '.*.pyc', '.*.pyo', '.*.pyd', '.*.py.class', '*.egg-info',
-    'venv*', '.venv*', '.*_cache',
-    'lib', 'lib64', '.*.so',
-    'build', 'dist', 'sdist', 'wheels',
+    '.github',
+    '.gitlab',
+    '.Python',
+    '.*.pyc',
+    '.*.pyo',
+    '.*.pyd',
+    '.*.py.class',
+    '*.egg-info',
+    'venv*',
+    '.venv*',
+    '.*_cache',
+    'lib',
+    'lib64',
+    '.*.so',
+    'build',
+    'dist',
+    'sdist',
+    'wheels',
 ]
