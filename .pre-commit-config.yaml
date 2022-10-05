@@ -12,8 +12,8 @@ repos:
         args:
           [
             '--max-line-length=120',
-            '--extend-ignore=E203,E501,W503',
-            '--exclude=.venv,dist,build,docs',
+            '--extend-ignore=H101,H202,H233,H301,H306,H401,H403,H404,H405,H501,F401',
+            '--exclude=.venv,dist,build,docs,.github,.gitlab,.git,.*_cache,.*.pyo',
           ]
   - repo: https://github.com/PyCQA/isort
     rev: '5.10.1'
@@ -35,3 +35,8 @@ repos:
       - id: check-ast
       - id: end-of-file-fixer
       - id: trailing-whitespace
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-json
+      - id: check-xml
