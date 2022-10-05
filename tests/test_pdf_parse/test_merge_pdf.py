@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+import datetime
+import os
+
 import pytest
 
 from pdf_parse import merge_pdf
@@ -42,6 +45,22 @@ def test_file_not_pdf():
 def test_merge_pdf():
     # fill pdf files
     merge_pdf.MergePdf([tpp.demo_pic_pdf_path, tpp.demo_pic_pdf_path], tpp.test_dist_path).merge()
+
+
+# test output dir not exist
+def test_output_dir_not_exist():
+    merge_pdf.MergePdf(
+        [tpp.demo_pic_pdf_path],
+        os.path.join(tpp.test_dist_path, f"test_{str(int(datetime.datetime.now().timestamp()))}"),
+    )
+
+
+# test pdf files not specified
+def test_pdf_files_not_specified():
+    with pytest.raises(ValueError) as e:
+        merge_pdf.MergePdf([], tpp.test_dist_path).merge()
+    exec_msg = e.value.args[0]
+    assert exec_msg == "pdf files not specified"
 
 
 def test_merge_pdf_demo_func():

@@ -21,6 +21,8 @@ class MergePdf:
     def __init__(self, pdf_files, output_dir):
         self.pdf_files = pdf_files
         self.output_dir = output_dir
+
+        self.check_files_specified()
         self.check_file()
         self.check_out_dir()
 
@@ -49,13 +51,10 @@ class MergePdf:
             if not pdf_file.endswith(".pdf"):
                 raise ValueError(f"file {pdf_file} is not pdf file")
 
-    # remove not exist file and not pdf file
-    def remove_file(self):
-        for pdf_file in self.pdf_files:
-            if not os.path.exists(pdf_file):
-                self.pdf_files.remove(pdf_file)
-            if not pdf_file.endswith(".pdf"):
-                self.pdf_files.remove(pdf_file)
+    # check pdf_files not specified
+    def check_files_specified(self):
+        if len(self.pdf_files) == 0:
+            raise ValueError("pdf files not specified")
 
     # if out_dir not exist, create it
     def check_out_dir(self):
@@ -77,7 +76,7 @@ def test_merge_pdf():
     for _item in range(random.randint(3, 12)):
         pdf_files.append(txt_pdf_path)
         if random.randint(0, 1) == 1:
-            pdf_files.append(pic_pdf_path)
+            pdf_files.append(pic_pdf_path)  # pragma: no cover
     # shuffle pdf files
     random.shuffle(pdf_files)
 
@@ -86,9 +85,9 @@ def test_merge_pdf():
     merge_pdf.merge()
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     # use "-i" got pdf files, use "-o" got output directory
-    parser = argparse.ArgumentParser(description="Merge pdf files")  # pragma: no cover
+    parser = argparse.ArgumentParser(description="Merge pdf files")
     parser.add_argument("-i", "--input", help="input pdf files", nargs="+", required=False)
     parser.add_argument("-o", "--output", help="output directory", required=False)
 

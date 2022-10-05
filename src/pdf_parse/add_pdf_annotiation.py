@@ -20,10 +20,12 @@ class AddPdfAnnotation:
     def __init__(self, source_pdf_path, output_pdf_path=None):
         self.check_file(source_pdf_path)
         self.source_pdf_path = source_pdf_path
+
         self.output_pdf_path = (
             output_pdf_path
             if output_pdf_path not in [None, ""] and output_pdf_path.endswith(".pdf")
-            else f"{source_pdf_path.split('.pdf')[0]}_annotated.pdf"
+            else f"{source_pdf_path.split('.pdf')[0]}_"
+            + f"dist_annotated_{str(int(datetime.datetime.now().timestamp()))}.pdf"
         )
 
     # add annotation to pdf file

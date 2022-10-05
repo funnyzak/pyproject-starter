@@ -26,7 +26,7 @@ def test_output_pdf_not_specified():
     assert os.path.exists(add_pdf_annotiation.AddPdfAnnotation(tpp.demo_pic_pdf_path).add_annotation([]))
 
 
-# test output pdf specified
+# test output pdf specified but not exist
 def test_output_pdf_specified():
     output_pdf = os.path.join(
         tpp.test_dist_path, "test_output_pdf_specified_" + f"{str(int(datetime.datetime.now().timestamp()))}.pdf"
@@ -44,22 +44,28 @@ def test_add_annotation():
         tpp.test_dist_path, f"test_add_annotation_{str(int(datetime.datetime.now().timestamp()))}.pdf"
     )
 
+    free_txt = AnnotationBuilder.free_text(
+        "Hello World\nThis is the second line!",
+        rect=(50, 550, 200, 650),
+        font="Arial",
+        bold=True,
+        italic=True,
+        font_size="20pt",
+        font_color="00ff00",
+        border_color="0000ff",
+        background_color="cdcdcd",
+    )
+
     assert os.path.exists(
         add_pdf_annotiation.AddPdfAnnotation(tpp.demo_pic_pdf_path, output_pdf).add_annotation(
             [
                 {
                     "page": 0,
-                    "annotiation": AnnotationBuilder.free_text(
-                        "Hello World\nThis is the second line!",
-                        rect=(50, 550, 200, 650),
-                        font="Arial",
-                        bold=True,
-                        italic=True,
-                        font_size="20pt",
-                        font_color="00ff00",
-                        border_color="0000ff",
-                        background_color="cdcdcd",
-                    ),
+                    "annotation": free_txt,
+                },
+                {
+                    "page": 3,
+                    "annotation": free_txt,
                 },
             ]
         )
