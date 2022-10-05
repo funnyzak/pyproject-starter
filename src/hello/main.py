@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # created by: leon<silenceace at gmail dot com>
 # date: 2022-10-02
 # license: MIT
@@ -15,4 +16,4 @@ def say_hello():
 
 
 if __name__ == "__main__":
-    say_hello()
+    say_hello()  # pragma: no cover
