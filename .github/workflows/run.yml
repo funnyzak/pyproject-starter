@@ -46,7 +46,7 @@ jobs:
         run: |
           if [ -z "${{ github.event.inputs.script_name }}" ]; then
             echo "No script name provided, running all scripts"
-            for script_name in $(echo ${{ env.POETRY_SCRIPT_NAME_LIST }} | tr ","
+            for script_name in $(echo "${{ env.POETRY_SCRIPT_NAME_LIST }}") | tr ","
             do
               echo "Running poetry script $script_name"
               poetry run $script_name
