@@ -18,7 +18,7 @@ jobs:
   coverage-report:
     name: Coverage report
     runs-on: ${{ matrix.os }}
-    if: startsWith(github.ref, 'refs/tags/') || github.event.inputs.coverage == 'true'
+    if: startsWith(github.ref, 'refs/tags/') || github.event.inputs.coverage == 'true' || github.event_name == 'push'
     strategy:
       matrix:
         python-version: ['3.10']

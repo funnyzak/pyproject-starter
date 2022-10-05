@@ -49,33 +49,6 @@ jobs:
         run: |
           poetry lock --check
 
-  run-hello-world:
-    name: Run hello world
-    runs-on: ${{ matrix.os }}
-    needs: [lint-and-test]
-    strategy:
-      matrix:
-        python-version: ['3.7']
-        poetry-version: ['1.2.1']
-        os: [ubuntu-latest]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Set up python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2.0.0
-        with:
-          poetry-version: ${{ matrix.poetry-version }}
-      - name: Install project dependencies
-        run: |
-          poetry install
-      - name: Run hello world script
-        run: |
-          poetry run hello
-
   release:
     name: Release
     env:
