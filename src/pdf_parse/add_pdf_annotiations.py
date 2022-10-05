@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # created by: leon<silenceace at gmail dot com>
 # date: 2022-10-02
 # license: MIT
@@ -9,8 +10,6 @@ import os
 
 from PyPDF2 import PdfReader, PdfWriter
 from PyPDF2.generic import AnnotationBuilder
-
-from pdf_parse import create_sub_dir
 
 
 RESOURCE_ROOT = os.path.join(os.path.dirname(__file__), "attachments")
