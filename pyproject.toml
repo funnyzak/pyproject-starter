@@ -25,20 +25,23 @@ packages = [
 
 [tool.poetry.scripts]
 hello = "hello.main:say_hello"
+merge_pdf = { callable = "pdf_parse.merge_pdf:main", extras = ["pdf"] }
+merge_pdf_demo = { callable = "pdf_parse.merge_pdf:test_merge_pdf", extras = ["pdf"] }
+add_pdf_annotation_demo = { callable = "pdf_parse.add_pdf_annotiation:add_pdf_annotiation_demo", extras = ["pdf"] }
+multi_layer_pdf = { callable = "pdf_parse.multi_pdf_to_multi_layer_pdf:main", extras = ["pdf"] }
+multi_layer_pdf_demo = { callable = "pdf_parse.multi_pdf_to_multi_layer_pdf:multi_pdf_to_multi_layer_pdf_demo", extras = ["pdf"] }
 
-merge_pdf = "pdf_parse.merge_pdf:main"
-merge_pdf_demo = "pdf_parse.merge_pdf:test_merge_pdf"
-add_pdf_annotation_demo = "pdf_parse.add_pdf_annotiation:add_pdf_annotiation_demo"
-multi_layer_pdf = "pdf_parse.multi_pdf_to_multi_layer_pdf:main"
-multi_layer_pdf_demo = "pdf_parse.multi_pdf_to_multi_layer_pdf:multi_pdf_to_multi_layer_pdf_demo"
 
 [tool.poetry.dependencies]
 python = "^3.7"
-PyPDF2 = { optional = true, version = "^2.11.0" }
 
 # optional dependencies, which enhance a package, but are not required; and clusters of optional dependencies.
+borb = { version = "^2.1.4", optional = true }
+PyPDF2 = { version = "^2.11.0", optional = true }
+
+
 [tool.poetry.extras]
-pdf = ["PyPDF2"]
+pdf = ["PyPDF2", "borb"]
 
 [tool.poetry.group.dev]
 optional = true
