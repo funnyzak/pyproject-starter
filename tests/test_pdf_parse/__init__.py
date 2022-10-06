@@ -8,7 +8,7 @@ project_attachment_dir = os.path.join(project_root_dir, "public/attachments")
 demo_pic_pdf_path = os.path.join(project_attachment_dir, "samplepic.pdf")
 demo_txt_pdf_path = os.path.join(project_attachment_dir, "whatispython.pdf")
 demo_txt_pdf2_path = os.path.join(project_attachment_dir, "whatispython2.pdf")
-test_dist_path = os.path.join(project_root_dir, "dist/pdf_parse")
+test_dist_path = os.path.join(project_root_dir, "dist/_test/pdf_parse")
 
 # if test dist path not exist, create it
 if not os.path.exists(test_dist_path):

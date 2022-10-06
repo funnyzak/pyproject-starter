@@ -35,7 +35,7 @@ def test_output_pdf_specified_but_not_exist():
     assert os.path.exists(add_pdf_annotiation.AddPdfAnnotation(tpp.demo_pic_pdf_path, output_pdf).add_annotation([]))
 
 
-def test_demo():
+def test_add_pdf_annotiation_demo():
     add_pdf_annotiation.add_pdf_annotiation_demo()
 
 
