@@ -14,7 +14,7 @@ on:
         default: ''
 
 env:
-  POETRY_SCRIPT_NAME_LIST: 'hello,mergepdf,addpdfannotation,multi_layer_pdf'
+  POETRY_SCRIPT_NAME_LIST: 'hello,merge_pdf_demo,add_pdf_annotation_demo,multi_layer_pdf_demo'
 
 jobs:
   run-project:
