@@ -16,7 +16,7 @@ from PyPDF2.generic import AnnotationBuilder
 class AddPdfAnnotation:
     """add annotation to a pdf file."""
 
-    def __init__(self, source_pdf_path, output_pdf_path=None) -> None:
+    def __init__(self, source_pdf_path, output_pdf_path: str = "") -> None:
         """Pass in the path to the PDF file you want to annotate.
 
         :param source_pdf_path: source pdf file path
@@ -70,7 +70,6 @@ def add_pdf_annotiation_demo() -> None:
     root_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
     attachment_dir = os.path.join(root_dir, "public/attachments")
     pic_pdf_path = os.path.join(attachment_dir, "samplepic.pdf")
-
     # Create the annotation and add it
     annotation = AnnotationBuilder.free_text(
         "Hello World\nThis is the second line!",
