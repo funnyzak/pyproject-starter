@@ -29,7 +29,8 @@ def test_output_pdf_not_specified():
 # test output pdf specified but not exist
 def test_output_pdf_specified_but_not_exist():
     output_pdf = os.path.join(
-        tpp.test_dist_path, "test_output_pdf_specified_" + f"{str(int(datetime.datetime.now().timestamp()))}.pdf"
+        tpp.test_dist_path,
+        "test_output_pdf_specified_" + f"{str(int(datetime.datetime.now().timestamp() * 1000 ))}.pdf",
     )
     assert os.path.exists(add_pdf_annotiation.AddPdfAnnotation(tpp.demo_pic_pdf_path, output_pdf).add_annotation([]))
 
@@ -41,7 +42,7 @@ def test_demo():
 # test add annotation
 def test_add_annotation():
     output_pdf = os.path.join(
-        tpp.test_dist_path, f"test_add_annotation_{str(int(datetime.datetime.now().timestamp()))}.pdf"
+        tpp.test_dist_path, f"test_add_annotation_{str(int(datetime.datetime.now().timestamp() * 1000 ))}.pdf"
     )
 
     free_txt = AnnotationBuilder.free_text(

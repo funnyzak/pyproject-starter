@@ -51,7 +51,7 @@ def test_merge_pdf():
 def test_output_dir_not_exist():
     merge_pdf.MergePdf(
         [tpp.demo_pic_pdf_path],
-        os.path.join(tpp.test_dist_path, f"test_{str(int(datetime.datetime.now().timestamp()))}"),
+        os.path.join(tpp.test_dist_path, f"test_{str(int(datetime.datetime.now().timestamp() * 1000))}"),
     )
 
 

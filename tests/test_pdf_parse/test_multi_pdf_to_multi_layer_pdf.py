@@ -53,7 +53,7 @@ def test_base_pdf_pages_greater_than_top_pdf_page():
 def test_output_dir_not_exist():
     multi_pdf_to_multi_layer_pdf.MultiPdfToMultiLayerFile(
         [tpp.demo_pic_pdf_path, tpp.demo_txt_pdf_path],
-        os.path.join(tpp.test_dist_path, "test", f"test_{str(int(datetime.datetime.now().timestamp()))}"),
+        os.path.join(tpp.test_dist_path, "test", f"test_{str(int(datetime.datetime.now().timestamp() * 1000))}"),
     )
 
 

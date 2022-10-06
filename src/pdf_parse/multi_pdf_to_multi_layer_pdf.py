@@ -32,7 +32,7 @@ class MultiPdfToMultiLayerFile:
     def be_multi_layer(self):
         """Merge pdf_files be multi-layer pdf file."""
         multi_layer_pdf_path = os.path.join(
-            self.output_dir, f"multi_layer_dist_{str(int(datetime.now().timestamp()))}.pdf"
+            self.output_dir, f"multi_layer_dist_{str(int(datetime.now().timestamp() * 1000))}.pdf"
         )
 
         # clone first pdf file as base multi layer pdf file

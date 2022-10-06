@@ -29,8 +29,8 @@ class MergePdf:
         self.check_file()
         self.check_out_dir()
 
-    # merge pdf files
     def merge(self):
+        """Merge pdf files."""
         merger = PdfMerger()
         merge_pdf_path = os.path.join(self.output_dir, f"merge_{str(int(datetime.now().timestamp()))}.pdf")
 
@@ -65,8 +65,8 @@ class MergePdf:
             os.makedirs(self.output_dir)
 
 
-# test merge pdf files
 def test_merge_pdf():
+    """Test merge pdf files."""
     # get path top level directory
     root_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
     attachment_dir = os.path.join(root_dir, "public/attachments")
