@@ -693,7 +693,7 @@ pdf = ["PyPDF2"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "196bf9e7ee4ca278aab05c758543641964faad899c29d17b7c7079e19026c214"
+content-hash = "a4167fa1558f02385631d3471fe027a49e3ca36898077c5a1274fa7c1b7283c1"
 
 [metadata.files]
 appnope = [

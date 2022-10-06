@@ -29,7 +29,7 @@ class AddPdfAnnotation:
         # if output pdf file path not specified, use tempfile path
         if output_pdf_path is None:
             output_pdf_path = os.path.join(
-                os.path.dirname(source_pdf_path),
+                os.path.dirname(tempfile.gettempdir()),
                 f"annotated_{os.path.basename(source_pdf_path)}",
             )
         self.output_pdf_path = (
