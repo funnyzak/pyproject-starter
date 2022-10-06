@@ -16,7 +16,7 @@ from PyPDF2.generic import AnnotationBuilder
 class AddPdfAnnotation:
     """add annotation to a pdf file."""
 
-    def __init__(self, source_pdf_path, output_pdf_path=None):
+    def __init__(self, source_pdf_path, output_pdf_path=None) -> None:
         """Pass in the path to the PDF file you want to annotate.
 
         :param source_pdf_path: source pdf file path
@@ -33,7 +33,7 @@ class AddPdfAnnotation:
             + f"dist_annotated_{str(int(datetime.datetime.now().timestamp()))}.pdf"
         )
 
-    def add_annotation(self, annotation_list: list):
+    def add_annotation(self, annotation_list: list) -> str:
         """Fill the writer with the pages you want.
 
         :param annotation_list: annotation list - annotation list and
@@ -65,7 +65,7 @@ class AddPdfAnnotation:
             raise ValueError(f"file {file_path} is not pdf file")
 
 
-def add_pdf_annotiation_demo():
+def add_pdf_annotiation_demo() -> None:
     """Add pdf annotiation demo."""
     root_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
     attachment_dir = os.path.join(root_dir, "public/attachments")

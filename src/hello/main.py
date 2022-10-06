@@ -7,12 +7,12 @@
 # notes:
 
 
-def hello():
+def hello() -> str:
     """Return hello world."""
     return "Hello, world!"
 
 
-def say_hello():
+def say_hello() -> None:
     """Print hello world."""
     print(hello())
 

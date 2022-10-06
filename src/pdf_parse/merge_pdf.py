@@ -16,7 +16,7 @@ from PyPDF2 import PdfMerger
 
 # Merge pdf files class
 class MergePdf:
-    def __init__(self, pdf_files, output_dir):
+    def __init__(self, pdf_files, output_dir) -> None:
         """Pass pdf files to be merged and output dir.
 
         :param pdf_files: pdf files to be merged
@@ -29,7 +29,7 @@ class MergePdf:
         self.check_file()
         self.check_out_dir()
 
-    def merge(self):
+    def merge(self) -> str:
         """Merge pdf files."""
         merger = PdfMerger()
         merge_pdf_path = os.path.join(self.output_dir, f"merge_{str(int(datetime.now().timestamp()))}.pdf")
@@ -46,7 +46,7 @@ class MergePdf:
         # return merge pdf file path
         return merge_pdf_path
 
-    def check_file(self):
+    def check_file(self) -> None:
         """Check file exist and if pdf file."""
         for pdf_file in self.pdf_files:
             if not os.path.exists(pdf_file):
@@ -54,7 +54,7 @@ class MergePdf:
             if not pdf_file.endswith(".pdf"):
                 raise ValueError(f"file {pdf_file} is not pdf file")
 
-    def check_files_specified(self):
+    def check_files_specified(self) -> None:
         """Check pdf_files not specified."""
         if len(self.pdf_files) == 0:
             raise ValueError("pdf files not specified")
@@ -65,7 +65,7 @@ class MergePdf:
             os.makedirs(self.output_dir)
 
 
-def test_merge_pdf():
+def test_merge_pdf() -> None:
     """Test merge pdf files."""
     # get path top level directory
     root_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
@@ -88,7 +88,7 @@ def test_merge_pdf():
     merge_pdf.merge()
 
 
-def main():  # pragma: no cover
+def main() -> None:  # pragma: no cover
     # use "-i" got pdf files, use "-o" got output directory
     parser = argparse.ArgumentParser(description="Merge pdf files")
     parser.add_argument("-i", "--input", help="input pdf files", nargs="+", required=False)

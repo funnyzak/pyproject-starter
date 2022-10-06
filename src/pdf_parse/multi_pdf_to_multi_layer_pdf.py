@@ -16,7 +16,7 @@ from PyPDF2 import PdfReader, PdfWriter
 class MultiPdfToMultiLayerFile:
     """Parse pdf file to multi layer file."""
 
-    def __init__(self, pdf_files, output_dir):
+    def __init__(self, pdf_files, output_dir) -> None:
         """Parse pdf file to multi layer file.
 
         :param pdf_files: pdf files to be multi layer
@@ -29,7 +29,7 @@ class MultiPdfToMultiLayerFile:
         self.check_files_specified()
         self.check_out_dir()
 
-    def be_multi_layer(self):
+    def be_multi_layer(self) -> str:
         """Merge pdf_files be multi-layer pdf file."""
         multi_layer_pdf_path = os.path.join(
             self.output_dir, f"multi_layer_dist_{str(int(datetime.now().timestamp() * 1000))}.pdf"
@@ -72,7 +72,7 @@ class MultiPdfToMultiLayerFile:
 
         return multi_layer_pdf_path
 
-    def check_file(self):
+    def check_file(self) -> None:
         """Check file exist and if pdf file."""
         for pdf_file in self.pdf_files:
             if not os.path.exists(pdf_file):
@@ -80,20 +80,20 @@ class MultiPdfToMultiLayerFile:
             if not pdf_file.endswith(".pdf"):
                 raise ValueError(f"file {pdf_file} is not pdf file")
 
-    def check_files_specified(self):
+    def check_files_specified(self) -> None:
         """Check pdf_files not specified."""
         if len(self.pdf_files) == 0:
             raise ValueError("pdf files not specified")
         if len(self.pdf_files) == 1:
             raise ValueError("pdf files must be more than one")
 
-    def check_out_dir(self):
+    def check_out_dir(self) -> None:
         """If out_dir not exist, create it."""
         if not os.path.exists(self.output_dir):
             os.makedirs(self.output_dir)
 
 
-def multi_pdf_to_multi_layer_pdf_demo():
+def multi_pdf_to_multi_layer_pdf_demo() -> None:
     root_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
     attachment_dir = os.path.join(root_dir, "public/attachments")
     txt_pdf_path = os.path.join(attachment_dir, "whatispython.pdf")
@@ -108,7 +108,7 @@ def multi_pdf_to_multi_layer_pdf_demo():
     multi_pdf.be_multi_layer()
 
 
-def main():  # pragma: no cover
+def main() -> None:  # pragma: no cover
     # use "-i" got pdf files, use "-o" got output directory
     parser = argparse.ArgumentParser(description="Parse pdf file to multi layer file")
     parser.add_argument("-i", "--input", help="input pdf files", nargs="+", required=False)
