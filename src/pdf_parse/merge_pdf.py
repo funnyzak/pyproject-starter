@@ -88,7 +88,7 @@ def test_merge_pdf():
     merge_pdf.merge()
 
 
-def main():
+def main():  # pragma: no cover
     # use "-i" got pdf files, use "-o" got output directory
     parser = argparse.ArgumentParser(description="Merge pdf files")
     parser.add_argument("-i", "--input", help="input pdf files", nargs="+", required=False)

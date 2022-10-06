@@ -108,7 +108,7 @@ def multi_pdf_to_multi_layer_pdf_demo():
     multi_pdf.be_multi_layer()
 
 
-def main():
+def main():  # pragma: no cover
     # use "-i" got pdf files, use "-o" got output directory
     parser = argparse.ArgumentParser(description="Parse pdf file to multi layer file")
     parser.add_argument("-i", "--input", help="input pdf files", nargs="+", required=False)

@@ -1,5 +1,8 @@
+# -*- coding: utf-8 -*-
 import time
+
 import pytest
+
 
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
@@ -12,7 +15,7 @@ def timer_session_scope():
     yield
 
     finished = time.time()
-    print("finished: {}".format(time.strftime(DATE_FORMAT, time.localtime(finished))))
+    print("\nfinished: {}".format(time.strftime(DATE_FORMAT, time.localtime(finished))))
     print("Total time cost: {:.3f}s".format(finished - start))
 
 
@@ -20,4 +23,4 @@ def timer_session_scope():
 def timer_function_scope():
     start = time.time()
     yield
-    print("Time cost: {:.3f}s".format(time.time() - start))
+    print("\nTime cost: {:.3f}s".format(time.time() - start))

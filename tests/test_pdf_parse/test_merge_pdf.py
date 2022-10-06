@@ -66,3 +66,8 @@ def test_pdf_files_not_specified():
 def test_merge_pdf_demo_func():
     # test merge pdf def in merge_pdf
     merge_pdf.test_merge_pdf()
+
+
+@pytest.mark.test_merge_pdf_main
+def test_main():
+    pytest.skip("skip test_main")
