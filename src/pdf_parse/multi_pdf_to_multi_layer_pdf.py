@@ -108,7 +108,7 @@ def multi_pdf_to_multi_layer_pdf_demo():
     multi_pdf.be_multi_layer()
 
 
-if __name__ == "__main__":  # pragma: no cover
+def main():
     # use "-i" got pdf files, use "-o" got output directory
     parser = argparse.ArgumentParser(description="Parse pdf file to multi layer file")
     parser.add_argument("-i", "--input", help="input pdf files", nargs="+", required=False)
@@ -128,3 +128,7 @@ if __name__ == "__main__":  # pragma: no cover
     # merge pdf files
     multi_pdf = MultiPdfToMultiLayerFile(pdf_files, output_dir)
     multi_pdf.be_multi_layer()
+
+
+if __name__ == "__main__":
+    main()  # pragma: no cover
