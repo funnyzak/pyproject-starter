@@ -8,7 +8,6 @@
 
 import datetime
 import os
-import tempfile
 
 from PyPDF2 import PdfReader, PdfWriter
 from PyPDF2.generic import AnnotationBuilder
@@ -27,16 +26,11 @@ class AddPdfAnnotation:
         self.source_pdf_path = source_pdf_path
 
         # if output pdf file path not specified, use tempfile path
-        if output_pdf_path is None:
-            output_pdf_path = os.path.join(
-                os.path.dirname(tempfile.gettempdir()),
-                f"annotated_{os.path.basename(source_pdf_path)}",
-            )
         self.output_pdf_path = (
             output_pdf_path
             if output_pdf_path not in [None, ""] and output_pdf_path.endswith(".pdf")
-            else f"{tempfile.gettempdir()}"
-            + f"dist_annotated_{str(int(datetime.datetime.now().timestamp() * 1000))}.pdf"
+            else f"{source_pdf_path.split('.pdf')[0]}_"
+            + f"dist_annotated_{str(int(datetime.datetime.now().timestamp()))}.pdf"
         )
 
     def add_annotation(self, annotation_list: list):
