@@ -118,26 +118,6 @@ poetry run isort ./src --check
 poetry run flake8 ./src
 ```
 
-## References
-
-some useful references:
-
-- [poetry](https://python-poetry.org/) is a dependency manager for Python that allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
-- [PyPDF2](https://pypdf2.readthedocs.io/en/latest/user/adding-pdf-annotations.html#free-text) is a library for working with PDF files.
-- [flake8](https://flake8.pycqa.org/en/latest/) is a wrapper around these tools: PyFlakes, pycodestyle, and Ned Batchelder’s McCabe script.
-- [isort](https://pycqa.github.io/isort/) is a Python utility / library to sort imports alphabetically, and automatically separated into sections and by type.
-- [black](https://black.readthedocs.io/en/stable/) is a Python code formatter.
-- [mypy](https://mypy.readthedocs.io/en/stable/config_file.html#per-module-and-global-options) is a static type checker for Python.
-- [pytest](https://docs.pytest.org/en/stable/) is a testing framework for Python.
-- [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/) is a plugin for the pytest testing tool that measures coverage of Python code.
-- [coverage](https://coverage.readthedocs.io/en/coverage-5.5/) is a tool for measuring code coverage of Python programs.
-- [ipdb](https://pypi.org/project/ipdb/) is a IPython-enabled pdb.
-- [pre-commit](https://pre-commit.com/) is a framework for managing and maintaining multi-language pre-commit hooks.
-- [tox](https://tox.readthedocs.io/en/latest/) is a generic virtualenv management and test command line tool you can use for:
-  - checking your package installs correctly with different Python versions and interpreters
-  - running your tests in each of the environments, configuring your test tool of choice
-  - acting as a frontend to Continuous Integration servers, greatly reducing boilerplate and merging CI and shell-based testing.
-
 ## Q&A
 
 ### Development
@@ -169,6 +149,26 @@ See [python installation](https://www.python.org/downloads/).
 #### install pre-commit
 
 See [pre-commit installation](https://pre-commit.com/#install).
+
+## References
+
+some useful references:
+
+- [poetry](https://python-poetry.org/) is a dependency manager for Python that allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
+- [PyPDF2](https://pypdf2.readthedocs.io/en/latest/user/adding-pdf-annotations.html#free-text) is a library for working with PDF files.
+- [flake8](https://flake8.pycqa.org/en/latest/) is a wrapper around these tools: PyFlakes, pycodestyle, and Ned Batchelder’s McCabe script.
+- [isort](https://pycqa.github.io/isort/) is a Python utility / library to sort imports alphabetically, and automatically separated into sections and by type.
+- [black](https://black.readthedocs.io/en/stable/) is a Python code formatter.
+- [mypy](https://mypy.readthedocs.io/en/stable/config_file.html#per-module-and-global-options) is a static type checker for Python.
+- [pytest](https://docs.pytest.org/en/stable/) is a testing framework for Python.
+- [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/) is a plugin for the pytest testing tool that measures coverage of Python code.
+- [coverage](https://coverage.readthedocs.io/en/coverage-5.5/) is a tool for measuring code coverage of Python programs.
+- [ipdb](https://pypi.org/project/ipdb/) is a IPython-enabled pdb.
+- [pre-commit](https://pre-commit.com/) is a framework for managing and maintaining multi-language pre-commit hooks.
+- [tox](https://tox.readthedocs.io/en/latest/) is a generic virtualenv management and test command line tool you can use for:
+  - checking your package installs correctly with different Python versions and interpreters
+  - running your tests in each of the environments, configuring your test tool of choice
+  - acting as a frontend to Continuous Integration servers, greatly reducing boilerplate and merging CI and shell-based testing.
 
 ## Contribution
 

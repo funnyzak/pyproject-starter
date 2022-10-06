@@ -43,7 +43,7 @@ def test_file_not_pdf():
 
 @pytest.mark.usefixtures("merge_pdf_function_scope")
 def test_merge_pdf():
-    # fill pdf files
+    # merge pdf files
     merge_pdf.MergePdf([tpp.demo_pic_pdf_path, tpp.demo_pic_pdf_path], tpp.test_dist_path).merge()
 
 

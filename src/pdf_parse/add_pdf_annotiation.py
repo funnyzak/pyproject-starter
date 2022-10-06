@@ -13,11 +13,15 @@ from PyPDF2 import PdfReader, PdfWriter
 from PyPDF2.generic import AnnotationBuilder
 
 
-# add annotation to a pdf file
 class AddPdfAnnotation:
-    # @param {string} source_pdf_path - source pdf file path
-    # @param {string} output_pdf_path - output pdf file path
+    """add annotation to a pdf file."""
+
     def __init__(self, source_pdf_path, output_pdf_path=None):
+        """Pass in the path to the PDF file you want to annotate.
+
+        :param source_pdf_path: source pdf file path
+        :param output_pdf_path: output pdf file path
+        """
         self.check_file(source_pdf_path)
         self.source_pdf_path = source_pdf_path
 
@@ -28,12 +32,12 @@ class AddPdfAnnotation:
             + f"dist_annotated_{str(int(datetime.datetime.now().timestamp()))}.pdf"
         )
 
-    # add annotation to pdf file
     def add_annotation(self, annotation_list: list):
-        # @param {list} annotation_list - annotation list and
-        # each item is a dict like: {"page": 0, "annotation":
-        # annotation}
-        # Fill the writer with the pages you want
+        """Fill the writer with the pages you want.
+
+        :param annotation_list: annotation list - annotation list and
+        each item is a dict like: {"page": 0, "annotation": annotation}
+        """
         reader = PdfReader(self.source_pdf_path)
 
         # write each page to output pdf file from source pdf file
@@ -52,8 +56,8 @@ class AddPdfAnnotation:
             print(f"Annotated PDF written to {self.output_pdf_path}")
         return self.output_pdf_path
 
-    # check file exist and if pdf file
     def check_file(self, file_path: str):
+        """Check file exist and if pdf file."""
         if not os.path.exists(file_path):
             raise FileNotFoundError(f"file {file_path} not found")
         if not file_path.endswith(".pdf"):

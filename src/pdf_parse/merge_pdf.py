@@ -14,11 +14,14 @@ import random
 from PyPDF2 import PdfMerger
 
 
-# merget pdf files class
+# Merge pdf files class
 class MergePdf:
-    # @param {list} pdf_files - pdf files list
-    # @param {string} output_dir - output directory
     def __init__(self, pdf_files, output_dir):
+        """Pass pdf files to be merged and output dir.
+
+        :param pdf_files: pdf files to be merged
+        :param output_dir: output dir
+        """
         self.pdf_files = pdf_files
         self.output_dir = output_dir
 
@@ -43,21 +46,21 @@ class MergePdf:
         # return merge pdf file path
         return merge_pdf_path
 
-    # check file exist and if pdf file
     def check_file(self):
+        """Check file exist and if pdf file."""
         for pdf_file in self.pdf_files:
             if not os.path.exists(pdf_file):
                 raise FileNotFoundError(f"file {pdf_file} not found")
             if not pdf_file.endswith(".pdf"):
                 raise ValueError(f"file {pdf_file} is not pdf file")
 
-    # check pdf_files not specified
     def check_files_specified(self):
+        """Check pdf_files not specified."""
         if len(self.pdf_files) == 0:
             raise ValueError("pdf files not specified")
 
-    # if out_dir not exist, create it
     def check_out_dir(self):
+        """If out_dir not exist, create it."""
         if not os.path.exists(self.output_dir):
             os.makedirs(self.output_dir)
 

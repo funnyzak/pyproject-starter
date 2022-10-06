@@ -27,6 +27,7 @@ packages = [
 hello = "hello.main:say_hello"
 mergepdf = "pdf_parse.merge_pdf:test_merge_pdf"
 addpdfannotation = "pdf_parse.add_pdf_annotiation:add_pdf_annotiation_demo"
+multi_layer_pdf = "pdf_parse.multi_pdf_to_multi_layer_pdf:multi_pdf_to_multi_layer_pdf_demo"
 
 [tool.poetry.dependencies]
 python = "^3.7"
@@ -50,6 +51,7 @@ flake8-logging-format = "^0.8.1"
 ipdb = "^0.13.9"
 tox = "^3.26.0"
 pre-commit = "^2.20.0"
+toml = "^0.10.2"
 
 [tool.poetry.group.test]
 optional = true
