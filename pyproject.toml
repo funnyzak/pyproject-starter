@@ -25,9 +25,12 @@ packages = [
 
 [tool.poetry.scripts]
 hello = "hello.main:say_hello"
-mergepdf = "pdf_parse.merge_pdf:test_merge_pdf"
-addpdfannotation = "pdf_parse.add_pdf_annotiation:add_pdf_annotiation_demo"
-multi_layer_pdf = "pdf_parse.multi_pdf_to_multi_layer_pdf:multi_pdf_to_multi_layer_pdf_demo"
+
+merge_pdf = "pdf_parse.merge_pdf:main"
+merge_pdf_demo = "pdf_parse.merge_pdf:test_merge_pdf"
+add_pdf_annotation_demo = "pdf_parse.add_pdf_annotiation:add_pdf_annotiation_demo"
+multi_layer_pdf = "pdf_parse.multi_pdf_to_multi_layer_pdf:main"
+multi_layer_pdf_demo = "pdf_parse.multi_pdf_to_multi_layer_pdf:multi_pdf_to_multi_layer_pdf_demo"
 
 [tool.poetry.dependencies]
 python = "^3.7"

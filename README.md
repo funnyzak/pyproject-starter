@@ -88,7 +88,10 @@ There are some useful commands for development:
 poetry run hello
 
 # Run project => pdf_parse: merge pdf
-poetry run mergepdf
+poetry run merge_pdf
+
+# Run project => pdf_parse: parse multi pdf to multi-layer pdf
+poetry run multi_layer_pdf
 
 # Debug "hello" project with ipdb3
 poetry run ipdb3 ./src/hello/main.py
