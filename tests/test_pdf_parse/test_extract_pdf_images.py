@@ -24,3 +24,8 @@ def test_not_pdf_file():
 def test_extract_pdf_images(output_path):
     # extract pdf images
     extract_pdf_images.ExtractPdfImages(tpp.demo_pic_pdf_path, output_path).extract()
+
+
+def test_extract_demo():
+    """Test extract demo."""
+    extract_pdf_images.test_extract_pdf_images()

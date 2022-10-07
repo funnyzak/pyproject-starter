@@ -3,9 +3,10 @@
 # date: 2022-10-07
 # license: MIT
 # description: Extract images from pdf file
-# usage: poetry run python src/pdf_parse/extract_pdf_image.py
+# usage: poetry run python src/pdf_parse/extract_pdf_images.py
 # notes:
 
+import argparse
 from datetime import datetime
 
 # Extract images from pdf file
@@ -36,7 +37,7 @@ class ExtractPdfImages:
         img_path_list = []
 
         for i, page in enumerate(pdf.pages):
-            for j, (name, raw_image) in enumerate(page.images.items()):
+            for j, (_name, raw_image) in enumerate(page.images.items()):
 
                 cur_img = PdfImage(raw_image)
                 img_path_list.append(cur_img.extract_to(fileprefix=f"{self.output_path}-page{i:03}-img{j:03}"))
@@ -58,3 +59,36 @@ class ExtractPdfImages:
             )
         if not os.path.exists(self.output_path):
             os.makedirs(self.output_path)
+
+
+def test_extract_pdf_images():
+    """Test extract pdf images."""
+    root_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+    attachment_dir = os.path.join(root_dir, "public/attachments")
+    pic_pdf_path = os.path.join(attachment_dir, "samplepic.pdf")
+
+    extract_pdf_images = ExtractPdfImages(pic_pdf_path)
+    extract_pdf_images.extract()
+
+
+def main() -> None:  # pragma: no cover
+    parser = argparse.ArgumentParser(description="Extract images from pdf file")
+    parser.add_argument("-i", "--input", help="input pdf file", required=False)
+    parser.add_argument("-o", "--output", help="output directory", required=False)
+
+    args = parser.parse_args()
+
+    pdf_file = args.input
+    output_dir = args.output
+
+    if pdf_file is None:
+        pdf_file = input("input pdf file: ").split(" ")
+    if output_dir is None:
+        output_dir = input("input output directory: ")
+
+    extract_pdf = ExtractPdfImages(pdf_file, output_dir)
+    extract_pdf.extract()
+
+
+if __name__ == "__main__":
+    main()  # pragma: no cover

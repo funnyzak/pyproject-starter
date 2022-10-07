@@ -25,6 +25,8 @@ packages = [
 
 [tool.poetry.scripts]
 hello = "hello.main:say_hello"
+extract_pdf_images = { callable = "pdf_parse.extract_pdf_images:main", extras = ["pdf"] }
+extract_pdf_images_demo = { callable = "pdf_parse.extract_pdf_images:test_extract_pdf_images", extras = ["pdf"] }
 merge_pdf = { callable = "pdf_parse.merge_pdf:main", extras = ["pdf"] }
 merge_pdf_demo = { callable = "pdf_parse.merge_pdf:test_merge_pdf", extras = ["pdf"] }
 add_pdf_annotation_demo = { callable = "pdf_parse.add_pdf_annotiation:add_pdf_annotiation_demo", extras = ["pdf"] }
