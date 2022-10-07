@@ -13,7 +13,8 @@ from datetime import datetime
 import os
 from typing import List
 
-from pikepdf import Pdf, PdfImage
+from pikepdf import Pdf
+from pikepdf import PdfImage
 
 
 class ExtractPdfImages:

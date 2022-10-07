@@ -10,7 +10,8 @@ import argparse
 from datetime import datetime
 import os
 
-from PyPDF2 import PdfReader, PdfWriter
+from PyPDF2 import PdfReader
+from PyPDF2 import PdfWriter
 
 
 class MultiPdfToMultiLayerFile:
@@ -34,6 +35,8 @@ class MultiPdfToMultiLayerFile:
         multi_layer_pdf_path = os.path.join(
             self.output_path, f"multi_layer_dist_{str(int(datetime.now().timestamp() * 1000))}.pdf"
         )
+
+        print("Strat merge pdf files to multi layer pdf file...")
 
         # clone first pdf file as base multi layer pdf file
         base_pdf = PdfReader(self.pdf_files[0])

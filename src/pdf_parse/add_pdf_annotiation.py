@@ -9,7 +9,8 @@
 from datetime import datetime
 import os
 
-from PyPDF2 import PdfReader, PdfWriter
+from PyPDF2 import PdfReader
+from PyPDF2 import PdfWriter
 from PyPDF2.generic import AnnotationBuilder
 
 
