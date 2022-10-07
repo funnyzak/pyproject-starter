@@ -38,10 +38,11 @@ python = "^3.7"
 # optional dependencies, which enhance a package, but are not required; and clusters of optional dependencies.
 borb = { version = "^2.1.4", optional = true }
 PyPDF2 = { version = "^2.11.0", optional = true }
+pikepdf = {version = "^6.2.0", optional = true}
 
 
 [tool.poetry.extras]
-pdf = ["PyPDF2", "borb"]
+pdf = ["PyPDF2", "borb", "pikepdf"]
 
 [tool.poetry.group.dev]
 optional = true
