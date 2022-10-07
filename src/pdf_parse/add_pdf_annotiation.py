@@ -72,7 +72,7 @@ class AddPdfAnnotation:
 def add_pdf_annotiation_demo() -> None:
     """Add pdf annotiation demo."""
     root_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
-    attachment_dir = os.path.join(root_dir, "public/attachments")
+    attachment_dir = os.path.join(root_dir, "public/attachments/pdf")
     pic_pdf_path = os.path.join(attachment_dir, "samplepic.pdf")
     # Create the annotation and add it
     annotation = AnnotationBuilder.free_text(

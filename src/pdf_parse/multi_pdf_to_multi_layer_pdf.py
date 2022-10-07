@@ -96,7 +96,7 @@ class MultiPdfToMultiLayerFile:
 
 def multi_pdf_to_multi_layer_pdf_demo() -> None:
     root_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
-    attachment_dir = os.path.join(root_dir, "public/attachments")
+    attachment_dir = os.path.join(root_dir, "public/attachments/pdf")
     txt_pdf_path = os.path.join(attachment_dir, "whatispython.pdf")
     pic_pdf_path = os.path.join(attachment_dir, "samplepic.pdf")
 

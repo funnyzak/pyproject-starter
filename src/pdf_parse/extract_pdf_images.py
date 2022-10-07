@@ -65,7 +65,7 @@ class ExtractPdfImages:
 def test_extract_pdf_images():
     """Test extract pdf images."""
     root_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
-    attachment_dir = os.path.join(root_dir, "public/attachments")
+    attachment_dir = os.path.join(root_dir, "public/attachments/pdf")
     pic_pdf_path = os.path.join(attachment_dir, "samplepic.pdf")
 
     extract_pdf_images = ExtractPdfImages(pic_pdf_path)
