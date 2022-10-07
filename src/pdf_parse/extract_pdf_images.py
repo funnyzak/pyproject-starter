@@ -11,6 +11,7 @@ from datetime import datetime
 
 # Extract images from pdf file
 import os
+from typing import List
 
 from pikepdf import Pdf, PdfImage
 
@@ -30,7 +31,7 @@ class ExtractPdfImages:
         self.check_file()
         self.check_out_path()
 
-    def extract(self) -> list[str]:
+    def extract(self) -> List[str]:
         """Extract images from pdf file."""
         pdf = Pdf.open(self.pdf_file)
 
