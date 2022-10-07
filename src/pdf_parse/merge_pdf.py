@@ -16,23 +16,23 @@ from PyPDF2 import PdfMerger
 
 # Merge pdf files class
 class MergePdf:
-    def __init__(self, pdf_files, output_dir) -> None:
+    def __init__(self, pdf_files, output_path=None) -> None:
         """Pass pdf files to be merged and output dir.
 
         :param pdf_files: pdf files to be merged
-        :param output_dir: output dir
+        :param output_path: merged pdf file output path
         """
         self.pdf_files = pdf_files
-        self.output_dir = output_dir
+        self.output_path = output_path
 
         self.check_files_specified()
         self.check_file()
-        self.check_out_dir()
+        self.check_out_path()
 
     def merge(self) -> str:
         """Merge pdf files."""
         merger = PdfMerger()
-        merge_pdf_path = os.path.join(self.output_dir, f"merge_{str(int(datetime.now().timestamp()))}.pdf")
+        merge_pdf_path = os.path.join(self.output_path, f"merge_{str(int(datetime.now().timestamp() * 1000))}.pdf")
 
         for pdf_file in self.pdf_files:
             input_file = open(pdf_file, "rb")
@@ -59,10 +59,14 @@ class MergePdf:
         if len(self.pdf_files) == 0:
             raise ValueError("pdf files not specified")
 
-    def check_out_dir(self):
-        """If out_dir not exist, create it."""
-        if not os.path.exists(self.output_dir):
-            os.makedirs(self.output_dir)
+    def check_out_path(self):
+
+        if self.output_path in ["", None]:
+            self.output_path = os.path.join(
+                os.path.dirname(__file__), "_cache", str(int(datetime.now().timestamp() * 1000))
+            )
+        if not os.path.exists(self.output_path):
+            os.makedirs(self.output_path)
 
 
 def test_merge_pdf() -> None:
@@ -72,7 +76,6 @@ def test_merge_pdf() -> None:
     attachment_dir = os.path.join(root_dir, "public/attachments")
     txt_pdf_path = os.path.join(attachment_dir, "whatispython.pdf")
     pic_pdf_path = os.path.join(attachment_dir, "samplepic.pdf")
-    output_dir = os.path.join(root_dir, "dist/pdf_parse")
 
     # fill pdf files
     pdf_files = []
@@ -84,7 +87,7 @@ def test_merge_pdf() -> None:
     random.shuffle(pdf_files)
 
     # merge pdf files
-    merge_pdf = MergePdf(pdf_files, output_dir)
+    merge_pdf = MergePdf(pdf_files)
     merge_pdf.merge()
 
 

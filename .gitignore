@@ -139,3 +139,5 @@ app/**/docker-compose.yml
 dist/**/*
 
 **/*/*dist*.pdf
+
+_cache/

@@ -16,23 +16,23 @@ from PyPDF2 import PdfReader, PdfWriter
 class MultiPdfToMultiLayerFile:
     """Parse pdf file to multi layer file."""
 
-    def __init__(self, pdf_files, output_dir) -> None:
+    def __init__(self, pdf_files, output_path=None) -> None:
         """Parse pdf file to multi layer file.
 
         :param pdf_files: pdf files to be multi layer
-        :param output_dir: output dir
+        :param output_path: multi layer pdf file output path
         """
         self.pdf_files = pdf_files
-        self.output_dir = output_dir
+        self.output_path = output_path
 
         self.check_file()
         self.check_files_specified()
-        self.check_out_dir()
+        self.check_out_path()
 
     def be_multi_layer(self) -> str:
         """Merge pdf_files be multi-layer pdf file."""
         multi_layer_pdf_path = os.path.join(
-            self.output_dir, f"multi_layer_dist_{str(int(datetime.now().timestamp() * 1000))}.pdf"
+            self.output_path, f"multi_layer_dist_{str(int(datetime.now().timestamp() * 1000))}.pdf"
         )
 
         # clone first pdf file as base multi layer pdf file
@@ -87,10 +87,11 @@ class MultiPdfToMultiLayerFile:
         if len(self.pdf_files) == 1:
             raise ValueError("pdf files must be more than one")
 
-    def check_out_dir(self) -> None:
-        """If out_dir not exist, create it."""
-        if not os.path.exists(self.output_dir):
-            os.makedirs(self.output_dir)
+    def check_out_path(self) -> None:
+        if self.output_path in ["", None]:
+            self.output_path = os.path.join(os.path.dirname(__file__), "_cache")
+        if not os.path.exists(self.output_path):
+            os.makedirs(self.output_path)
 
 
 def multi_pdf_to_multi_layer_pdf_demo() -> None:
@@ -98,13 +99,12 @@ def multi_pdf_to_multi_layer_pdf_demo() -> None:
     attachment_dir = os.path.join(root_dir, "public/attachments")
     txt_pdf_path = os.path.join(attachment_dir, "whatispython.pdf")
     pic_pdf_path = os.path.join(attachment_dir, "samplepic.pdf")
-    output_dir = os.path.join(root_dir, "dist/pdf_parse")
 
     # fill pdf files
     pdf_files = [pic_pdf_path, txt_pdf_path]
 
     # merge pdf files
-    multi_pdf = MultiPdfToMultiLayerFile(pdf_files, output_dir)
+    multi_pdf = MultiPdfToMultiLayerFile(pdf_files)
     multi_pdf.be_multi_layer()
 
 

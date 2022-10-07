@@ -6,7 +6,7 @@
 # usage: poetry run python src/pdf_parse/add_pdf_annotiation.py
 # notes:
 
-import datetime
+from datetime import datetime
 import os
 
 from PyPDF2 import PdfReader, PdfWriter
@@ -16,22 +16,16 @@ from PyPDF2.generic import AnnotationBuilder
 class AddPdfAnnotation:
     """add annotation to a pdf file."""
 
-    def __init__(self, source_pdf_path, output_pdf_path: str = "") -> None:
+    def __init__(self, source_pdf_path, output_path: str = None) -> None:
         """Pass in the path to the PDF file you want to annotate.
 
         :param source_pdf_path: source pdf file path
-        :param output_pdf_path: output pdf file path
+        :param output_path: output pdf path
         """
-        self.check_file(source_pdf_path)
         self.source_pdf_path = source_pdf_path
-
-        # if output pdf file path not specified, use tempfile path
-        self.output_pdf_path = (
-            output_pdf_path
-            if output_pdf_path not in [None, ""] and output_pdf_path.endswith(".pdf")
-            else f"{source_pdf_path.split('.pdf')[0]}_"
-            + f"dist_annotated_{str(int(datetime.datetime.now().timestamp()))}.pdf"
-        )
+        self.output_path = output_path
+        self.check_file(source_pdf_path)
+        self.check_out_path()
 
     def add_annotation(self, annotation_list: list) -> str:
         """Fill the writer with the pages you want.
@@ -40,6 +34,9 @@ class AddPdfAnnotation:
         each item is a dict like: {"page": 0, "annotation": annotation}
         """
         reader = PdfReader(self.source_pdf_path)
+        output_pdf_path = os.path.join(
+            self.output_path, f"annotiation_{str(int(datetime.now().timestamp() * 1000))}.pdf"
+        )
 
         # write each page to output pdf file from source pdf file
         writer = PdfWriter()
@@ -52,10 +49,10 @@ class AddPdfAnnotation:
                 continue
             writer.add_annotation(page_number=annotation["page"], annotation=annotation["annotation"])
 
-        with open(self.output_pdf_path, "wb") as fp:
+        with open(output_pdf_path, "wb") as fp:
             writer.write(fp)
-            print(f"Annotated PDF written to {self.output_pdf_path}")
-        return self.output_pdf_path
+            print(f"Annotated PDF written to {output_pdf_path}")
+        return output_pdf_path
 
     def check_file(self, file_path: str):
         """Check file exist and if pdf file."""
@@ -63,6 +60,12 @@ class AddPdfAnnotation:
             raise FileNotFoundError(f"file {file_path} not found")
         if not file_path.endswith(".pdf"):
             raise ValueError(f"file {file_path} is not pdf file")
+
+    def check_out_path(self):
+        if self.output_path in ["", None]:
+            self.output_path = os.path.join(os.path.dirname(self.source_pdf_path), "_cache")
+        if not os.path.exists(self.output_path):
+            os.makedirs(self.output_path)
 
 
 def add_pdf_annotiation_demo() -> None:

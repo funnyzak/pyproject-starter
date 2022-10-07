@@ -81,6 +81,11 @@ minversion = "6.0"
 addopts = "-ra -vvv -s"
 testpaths = ["tests"]
 pythonpath = ["tests"]
+norecursedirs = ["tests/_cache"]
+markers = [
+    "test_merge_pdf_main",
+    "test_extract_pdf_images",
+]
 
 [tool.black]
 line-length = 120

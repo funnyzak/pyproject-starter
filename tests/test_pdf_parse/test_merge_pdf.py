@@ -47,11 +47,14 @@ def test_merge_pdf():
     merge_pdf.MergePdf([tpp.demo_pic_pdf_path, tpp.demo_pic_pdf_path], tpp.test_dist_path).merge()
 
 
-# test output dir not exist
-def test_output_dir_not_exist():
+@pytest.mark.parametrize(
+    "output_path",
+    [os.path.join(tpp.test_dist_path, f"test_{str(int(datetime.datetime.now().timestamp() * 1000))}"), ""],
+)
+def test_output_dir_not_exist(output_path):
     merge_pdf.MergePdf(
         [tpp.demo_pic_pdf_path],
-        os.path.join(tpp.test_dist_path, f"test_{str(int(datetime.datetime.now().timestamp() * 1000))}"),
+        output_path,
     )
 
 
