@@ -32,9 +32,7 @@ def test_extract_pdf_images(output_path):
 
 # test add annotation
 def test_add_annotation():
-    output_pdf = os.path.join(
-        tpp.test_dist_path, f"test_add_annotation_{str(int(datetime.datetime.now().timestamp() * 1000 ))}"
-    )
+    output_pdf = os.path.join(tpp.test_dist_path, f"test_add_annotation_{str(int(datetime.now().timestamp() * 1000 ))}")
 
     free_txt = AnnotationBuilder.free_text(
         "Hello World!",

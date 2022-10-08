@@ -141,3 +141,8 @@ dist/**/*
 **/*/*dist*.pdf
 
 _cache/
+
+
+**/*/*test*.jpeg
+**/*/*test*.jpg
+**/*/*test*.png
