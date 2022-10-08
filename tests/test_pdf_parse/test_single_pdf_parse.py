@@ -64,9 +64,9 @@ def test_add_annotation():
     )
 
 
-def test_extract_images():
+def test_extract_images_demo():
     single_pdf_parse.test_extract_images()
 
 
-def test_add_annotation():
+def test_add_annotation_demo():
     single_pdf_parse.test_add_annotation()
