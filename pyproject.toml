@@ -25,13 +25,15 @@ packages = [
 
 [tool.poetry.scripts]
 hello = "hello.main:say_hello"
-extract_pdf_images = { callable = "pdf_parse.extract_pdf_images:main", extras = ["pdf"] }
-extract_pdf_images_demo = { callable = "pdf_parse.extract_pdf_images:test_extract_pdf_images", extras = ["pdf"] }
-merge_pdf = { callable = "pdf_parse.merge_pdf:main", extras = ["pdf"] }
-merge_pdf_demo = { callable = "pdf_parse.merge_pdf:test_merge_pdf", extras = ["pdf"] }
-add_pdf_annotation_demo = { callable = "pdf_parse.add_pdf_annotiation:add_pdf_annotiation_demo", extras = ["pdf"] }
-multi_layer_pdf = { callable = "pdf_parse.multi_pdf_to_multi_layer_pdf:main", extras = ["pdf"] }
-multi_layer_pdf_demo = { callable = "pdf_parse.multi_pdf_to_multi_layer_pdf:multi_pdf_to_multi_layer_pdf_demo", extras = ["pdf"] }
+single_pdf_parse = { callable = "pdf_parse.single_pdf_parse:main", extras = ["pdf"] }
+multi_pdf_parse = { callable = "pdf_parse.multi_pdf_parse:main", extras = ["pdf"] }
+
+
+extract_pdf_images_demo = { callable = "pdf_parse.single_pdf_parse:test_extract_images", extras = ["pdf"] }
+add_pdf_annotation_demo = { callable = "pdf_parse.single_pdf_parse:test_add_annotation", extras = ["pdf"] }
+
+merge_pdf_demo = { callable = "pdf_parse.multi_pdf_parse:test_merge_pdf", extras = ["pdf"] }
+multi_layer_pdf_demo = { callable = "pdf_parse.multi_pdf_parse:test_multi_pdf_to_multi_layer", extras = ["pdf"] }
 
 
 [tool.poetry.dependencies]
@@ -86,7 +88,7 @@ testpaths = ["tests"]
 pythonpath = ["tests"]
 norecursedirs = ["tests/_cache"]
 markers = [
-    "test_merge_pdf_main",
+    "test_multi_pdf_parse_main",
     "test_extract_pdf_images",
 ]
 
