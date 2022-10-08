@@ -227,7 +227,6 @@ class NewPdfFromOcr:
             self.font = TrueTypeFont.true_type_font_from_file(Path(font_link))
 
     def check_out_path(self) -> None:
-        """Check out_path."""
         if not self.output_path:
             self.output_path = os.path.join(
                 os.path.dirname(__file__), "_cache", str(int(datetime.now().timestamp() * 1000))
