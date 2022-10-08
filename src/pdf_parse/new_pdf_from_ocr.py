@@ -6,7 +6,6 @@
 # usage:
 # notes:
 
-# type: ignore
 from datetime import datetime
 from decimal import Decimal
 import json
@@ -14,16 +13,16 @@ import os
 from pathlib import Path
 from typing import List
 
-from borb.pdf import PDF
+from borb.pdf import PDF  # type: ignore [import]
 from borb.pdf import Alignment
 from borb.pdf import Document
 from borb.pdf import HexColor
 from borb.pdf import Image
 from borb.pdf import Page
 from borb.pdf import Paragraph
-from borb.pdf.canvas.font.simple_font.true_type_font import TrueTypeFont
-from borb.pdf.canvas.geometry.rectangle import Rectangle
-from requests import get as requests_get
+from borb.pdf.canvas.font.simple_font.true_type_font import TrueTypeFont  # type: ignore [import]
+from borb.pdf.canvas.geometry.rectangle import Rectangle  # type: ignore [import]
+from requests import get as requests_get  # type: ignore [import]
 
 
 # from borb.pdf.canvas.layout.annotation.square_annotation import SquareAnnotation

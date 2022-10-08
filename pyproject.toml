@@ -123,7 +123,7 @@ lines_after_imports = 2
 
 honor_noqa = true
 atomic = true
-ignore_comments = true
+ignore_comments = false
 skip_gitignore = true
 src_paths = ['src', 'tests']
 known_first_party = "pdf_parse"
