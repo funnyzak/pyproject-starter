@@ -69,4 +69,4 @@ def test_extract_images():
 
 
 def test_add_annotation():
-    single_pdf_parse.test_add_annotiation()
+    single_pdf_parse.test_add_annotation()

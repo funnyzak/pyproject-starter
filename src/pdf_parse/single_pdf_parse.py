@@ -105,7 +105,7 @@ def test_extract_images() -> None:
     extract_pdf_images.extract_images()
 
 
-def test_add_annotiation() -> None:
+def test_add_annotation() -> None:
     """Add pdf annotiation demo."""
     # Create the annotation and add it
     annotation = AnnotationBuilder.free_text(

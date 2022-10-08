@@ -22,5 +22,6 @@
     },
     "python.autoComplete.extraPaths": [
 
-    ]
+    ],
+    "python.analysis.extraPaths": []
 }
