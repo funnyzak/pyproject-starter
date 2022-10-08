@@ -6,6 +6,7 @@
 # usage:
 # notes:
 
+# type: ignore
 from datetime import datetime
 from decimal import Decimal
 import json
@@ -70,7 +71,6 @@ class NewPdfFromOcr:
         self.custom_setting()
 
     def add_page(self, page_data: dict) -> None:
-
         self.check_page_datas()
         self.check_out_path()
 

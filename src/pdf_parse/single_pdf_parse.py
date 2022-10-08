@@ -33,6 +33,9 @@ class SinglePdfParse:
         self.check_file()
         self.check_out_path()
 
+    def export_as_images(self) -> List[str]:
+        pass
+
     def extract_images(self) -> List[str]:
         """Extract images from pdf file."""
         pdf = Pdf.open(self.pdf_file)
@@ -100,9 +103,14 @@ pic_pdf_path = os.path.join(attachment_dir, "samplepic.pdf")
 
 def test_extract_images() -> None:
     """Test extract pdf images."""
-
     extract_pdf_images = SinglePdfParse(pic_pdf_path)
     extract_pdf_images.extract_images()
+
+
+def test_export_as_images() -> None:
+    """Test export pdf as images."""
+    extract_pdf_images = SinglePdfParse(pic_pdf_path)
+    extract_pdf_images.export_as_images()
 
 
 def test_add_annotation() -> None:
