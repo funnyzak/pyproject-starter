@@ -32,6 +32,7 @@ class NewPdfFromOcr:
     doc: Document = Document()
     font = None
     font_color = "#ffffff"
+    page_ratio = Decimal(1.0)
 
     time_start = datetime.now()
 
@@ -45,7 +46,7 @@ class NewPdfFromOcr:
 
         :param page_datas: ocr result page info data, page_datas is list, each item is dict,
         dict keys is: origin_img, json_path.
-        :param options: options, dict, keys is: font_link, font, font_color.
+        :param options: options, dict, keys is: font_link, font, font_color, page_ratio.
         :param output_path: the output path of new pdf file.
         """
         self.output_path = output_path
@@ -53,13 +54,36 @@ class NewPdfFromOcr:
         self.options = options
 
         if not self.options:
-            self.options = {
-                "font_link": "https://raw.githubusercontent.com/Haixing-Hu/latex-chinese-fonts"
+            self.options = {}
+
+        if self.options.get("font_link") in ["", None]:
+            self.options["font_link"] = (
+                "https://raw.githubusercontent.com/Haixing-Hu/latex-chinese-fonts"
                 + "/master/chinese/%E6%A5%B7%E4%BD%93/Kaiti.ttf"
-            }
+            )
+
+        if self.options.get("page_ratio") and isinstance(self.options.get("page_ratio"), Decimal):
+            self.page_ratio = self.options["page_ratio"]
 
         self.check_page_datas()
         self.check_out_path()
+        self.custom_setting()
+
+    def add_page(self, page_data: dict) -> None:
+
+        self.check_page_datas()
+        self.check_out_path()
+
+    def set_output_path(self, output_path: str) -> None:
+        self.output_path = output_path
+        self.check_out_path()
+
+    def set_page_ratio(self, page_ratio: Decimal) -> None:
+        self.page_ratio = page_ratio
+
+    def set_page_datas(self, page_datas: List[dict]) -> None:
+        self.page_datas = page_datas
+        self.check_page_datas()
 
     def process(self) -> str:
         """Process all pages and export pdf file."""
@@ -69,9 +93,15 @@ class NewPdfFromOcr:
 
         self.custom_setting()
 
-        print("Start process all pages.")
-
         output_pdf_path = os.path.join(self.output_path, f"ocr_pdf_{str(int(datetime.now().timestamp() * 1000))}.pdf")
+
+        # print process info
+        print("Total pages: ", len(self.page_datas))
+        print("Output pdf path: ", output_pdf_path)
+
+        print("\nStart process all pages.\n")
+
+        self.doc = Document()
 
         for page_data in self.page_datas:
             self.process_page(page_data)
@@ -82,7 +112,7 @@ class NewPdfFromOcr:
             # Display the PDF path with color.
             print("The output pdf path is -> ", f"\033[1;32m{output_pdf_path}\033[0m")
 
-        print(f"End process all pages. \nEnd time: {datetime.now()} \nTotal time: ", datetime.now() - self.time_start)
+        print(f"End process all pages. \n\nEnd time: {datetime.now()} \nTotal time: ", datetime.now() - self.time_start)
 
         return output_pdf_path
 
@@ -100,8 +130,10 @@ class NewPdfFromOcr:
         if not ocr_result_json or not ocr_result_json.get("chars"):
             return
 
-        page_width = Decimal(ocr_result_json.get("width"))
-        page_height = Decimal(ocr_result_json.get("height"))
+        pdf_size_ratio = self.page_ratio
+
+        page_width = Decimal(ocr_result_json.get("width")) * pdf_size_ratio
+        page_height = Decimal(ocr_result_json.get("height")) * pdf_size_ratio
 
         # Create Page.
         page: Page = Page(width=page_width, height=page_height)
@@ -137,10 +169,10 @@ class NewPdfFromOcr:
 
         for _index, _word in enumerate(ocr_result_json["chars"]):
             ocr_char = _word["ocr_txt"]
-            char_pos_x = Decimal(_word["x"])
-            char_pos_y = Decimal(_word["y"])
-            char_width = Decimal(_word["w"])
-            char_height = Decimal(_word["h"])
+            char_pos_x = Decimal(_word["x"]) * pdf_size_ratio
+            char_pos_y = Decimal(_word["y"]) * pdf_size_ratio
+            char_width = Decimal(_word["w"]) * pdf_size_ratio
+            char_height = Decimal(_word["h"]) * pdf_size_ratio
 
             char_pdf_position: Rectangle = Rectangle(
                 Decimal(char_pos_x),
@@ -240,7 +272,12 @@ def test_new_pdf_from_ocr():  # pragma: no cover
     origin_img_path = os.path.join(root_dir, "public/attachments/pdf/ocr/test2.jpeg")
 
     page_datas = [{"json_path": json_path, "origin_img": origin_img_path}]
-    NewPdfFromOcr(page_datas=page_datas).process()
+    NewPdfFromOcr(
+        page_datas=page_datas,
+        options={
+            "page_ratio": Decimal(3.0),
+        },
+    ).process()
 
 
 if __name__ == "__main__":  # pragma: no cover
