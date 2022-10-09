@@ -94,9 +94,6 @@ class MultiPDFParse:
         return multi_layer_pdf_path
 
     def check_file(self) -> None:
-        if not self.pdf_files or len(self.pdf_files) == 0:
-            raise ValueError("pdf files not specified")
-
         for pdf_file in self.pdf_files:
             if not os.path.exists(pdf_file):
                 raise FileNotFoundError(f"file {pdf_file} not found")
