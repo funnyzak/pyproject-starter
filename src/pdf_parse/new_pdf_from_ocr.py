@@ -6,7 +6,6 @@
 # usage:
 # notes:
 
-# type: ignore
 from datetime import datetime
 from decimal import Decimal
 import json
@@ -68,11 +67,15 @@ class NewPdfFromOcr:
 
         self.check_page_datas()
         self.check_out_path()
-        self.custom_setting()
 
     def add_page(self, page_data: dict) -> None:
         self.check_page_datas()
         self.check_out_path()
+        self.page_datas.append(page_data)
+
+    def set_font(self, font_path) -> None:
+        """Set font. font_path is font file path or font downlink."""
+        self.options["font_link"] = font_path
 
     def set_output_path(self, output_path: str) -> None:
         self.output_path = output_path
@@ -91,8 +94,6 @@ class NewPdfFromOcr:
 
         print("Start time: ", self.time_start)
 
-        self.custom_setting()
-
         output_pdf_path = os.path.join(self.output_path, f"ocr_pdf_{str(int(datetime.now().timestamp() * 1000))}.pdf")
 
         # print process info
@@ -104,7 +105,7 @@ class NewPdfFromOcr:
         self.doc = Document()
 
         for page_data in self.page_datas:
-            self.process_page(page_data)
+            self.process_single_page(page_data)
 
         # store
         with open(output_pdf_path, "wb") as pdf_file_handle:
@@ -116,7 +117,7 @@ class NewPdfFromOcr:
 
         return output_pdf_path
 
-    def process_page(self, page_data: dict) -> None:
+    def process_single_page(self, page_data: dict) -> None:
         """Process single page and add to doc."""
         ocr_result_json = None
 
@@ -205,25 +206,19 @@ class NewPdfFromOcr:
 
     def check_page_datas(self) -> None:
         """Check page_datas."""
-        if not self.page_datas:
-            raise Exception("page_datas is empty.")
         if not isinstance(self.page_datas, List):
             raise Exception("page_datas is not list.")
+        if len(self.page_datas) == 0:
+            raise Exception("page_datas is empty.")
         for page_data in self.page_datas:
             if not isinstance(page_data, dict):
                 raise Exception("page_data is not dict.")
             if not page_data.get("json_path"):
                 raise Exception("page_data json_path is empty.")
-            if not os.path.exists(str(page_data.get("json_path")) if page_data.get("json_path") else ""):
+            if not os.path.exists(str(page_data.get("json_path"))):
                 raise Exception("page_data json_path not exist.")
 
-    def custom_setting(self) -> None:
-        """Custom setting."""
-        print("Start custom setting.")
-        self.custom_font_setting()
-        print("End custom setting.")
-
-    def custom_font_setting(self) -> None:
+    def load_font(self) -> None:
         """Custom font setting.
 
         Font download link:https://fonts.google.com/.
@@ -238,6 +233,7 @@ class NewPdfFromOcr:
 
         font_link = str(self.options.get("font_link"))
 
+        print("Start load custom font.")
         # If font_link is not empty, then download font and set font.
         if font_link and isinstance(font_link, str) and font_link.startswith("http"):
             # Set font download path.
@@ -247,15 +243,23 @@ class NewPdfFromOcr:
             # Font file save name.
             font_file_name = os.path.join(font_path, font_link.split("/")[-1])
 
+            can_load = True
             if not os.path.exists(font_file_name):
                 print(f"Start download font file: {font_link}.")
 
                 with open(font_file_name, "wb") as font_file_handle:
-                    font_file_handle.write(requests_get(font_link, stream=True).content)
-
-            self.font = TrueTypeFont.true_type_font_from_file(Path(font_file_name))
+                    _reponse = requests_get(font_link, stream=True)
+                    if _reponse.status_code == 200:
+                        font_file_handle.write(_reponse.content)
+                    else:
+                        print(
+                            f"Download font file {font_link} error. Status code: {_reponse.status_code}. pass download."
+                        )
+                        can_load = False
+            self.font = TrueTypeFont.true_type_font_from_file(Path(font_file_name)) if can_load else self.font
         elif os.path.exists(font_link):
             self.font = TrueTypeFont.true_type_font_from_file(Path(font_link))
+        print("Load custom font done.")
 
     def check_out_path(self) -> None:
         if not self.output_path:
