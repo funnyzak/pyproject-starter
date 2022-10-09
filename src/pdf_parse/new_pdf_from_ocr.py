@@ -73,9 +73,9 @@ class NewPdfFromOcr:
         self.check_out_path()
         self.page_datas.append(page_data)
 
-    def set_font(self, font_path) -> None:
+    def set_font(self, font_path: str) -> None:
         """Set font. font_path is font file path or font downlink."""
-        self.options["font_link"] = font_path
+        self.options["font_link"] = font_path  # type: ignore
 
     def set_output_path(self, output_path: str) -> None:
         self.output_path = output_path
