@@ -13,7 +13,7 @@ import os
 from pathlib import Path
 from typing import List
 
-from borb.license.usage_statistics import UsageStatistics
+from borb.license.usage_statistics import UsageStatistics  # type: ignore [import]
 from borb.pdf import PDF  # type: ignore [import]
 from borb.pdf import Alignment
 from borb.pdf import Document
