@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 from typing import List
 
+from borb.license.usage_statistics import UsageStatistics
 from borb.pdf import PDF  # type: ignore [import]
 from borb.pdf import Alignment
 from borb.pdf import Document
@@ -52,6 +53,8 @@ class NewPdfFromOcr:
         self.output_path = output_path
         self.page_datas = page_datas
         self.options = options
+
+        UsageStatistics.disable()
 
         if not self.options:
             self.options = {}
@@ -276,12 +279,14 @@ def test_new_pdf_from_ocr():  # pragma: no cover
     origin_img_path = os.path.join(root_dir, "public/attachments/pdf/ocr/test2.jpeg")
 
     page_datas = [{"json_path": json_path, "origin_img": origin_img_path}]
-    NewPdfFromOcr(
+    pdf_ocr = NewPdfFromOcr(
         page_datas=page_datas,
         options={
             "page_ratio": Decimal(3.0),
         },
-    ).process()
+    )
+    pdf_ocr.load_font()
+    pdf_ocr.process()
 
 
 if __name__ == "__main__":  # pragma: no cover
