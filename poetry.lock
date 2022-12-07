@@ -53,7 +53,7 @@ uvloop = ["uvloop (>=0.15.2)"]
 
 [[package]]
 name = "borb"
-version = "2.1.6"
+version = "2.1.7"
 description = "borb is a library for reading, creating and manipulating PDF files in python."
 category = "main"
 optional = true
@@ -893,7 +893,7 @@ pdf = ["PyPDF2", "borb", "pikepdf", "requests"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "b7e5ebea5661032772579aa734959f8bb13f33ecb57f0ff3dd84267f39e06720"
+content-hash = "9e516235d70f6f8a691b6a7b81cdb30c6b572765b18f8b5d29e5b70d3974dc82"
 
 [metadata.files]
 appnope = [
@@ -932,8 +932,8 @@ black = [
     {file = "black-22.10.0.tar.gz", hash = "sha256:f513588da599943e0cde4e32cc9879e825d58720d6557062d1098c5ad80080e1"},
 ]
 borb = [
-    {file = "borb-2.1.6-py3-none-any.whl", hash = "sha256:d6980b51b1caec3c40e50e159903d2f40a98932aa0700d2c8530ed1f9a417b2f"},
-    {file = "borb-2.1.6.tar.gz", hash = "sha256:0f5a47140b3d36213d53941ff8749c3d831f46f48d1692304a6021a5d4892782"},
+    {file = "borb-2.1.7-py3-none-any.whl", hash = "sha256:9e8053643fb6c6ff9fb6a0a26e7b7be4b8aed789c88365eff2bf5bb8934ef517"},
+    {file = "borb-2.1.7.tar.gz", hash = "sha256:7b0dce343bd9bbb3acf1d6f3da90eabd4f73c80bbcf9a4ed589aae23ac59e820"},
 ]
 certifi = [
     {file = "certifi-2022.9.24-py3-none-any.whl", hash = "sha256:90c1a32f1d68f940488354e36370f6cca89f0f106db09518524c88d6ed83f382"},
