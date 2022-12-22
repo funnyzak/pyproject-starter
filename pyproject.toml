@@ -163,7 +163,9 @@ extend-ignore = [
     # H501: Do not use self.__dict__ for string formatting
     'H501',
     # F401: module imported but unused
-    #'F401'
+    'F401',
+    # G002: Use lazy % formatting in logging functions
+    'G002'
 ]
 # 'select' defaults to: E,F,W,C90
 extend-select = [
