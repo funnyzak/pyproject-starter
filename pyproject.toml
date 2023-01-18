@@ -53,7 +53,7 @@ pdf = ["PyPDF2", "borb", "pikepdf", "requests"]
 optional = true
 
 [tool.poetry.group.dev.dependencies]
-isort = "^5.10.1"
+isort = "^5.11.4"
 black = "^22.8.0"
 mypy = "^0.982"
 flake8 = "^5.0.4"
