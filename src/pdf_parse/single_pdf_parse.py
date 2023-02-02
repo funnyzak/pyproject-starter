@@ -32,7 +32,8 @@ class SinglePdfParse:
         self.check_out_path()
 
     def export_as_images(self) -> List[str]:
-        pass
+        # return empty
+        return []
 
     def add_annotation(self, annotation_list: list) -> str:
         """Fill the writer with the pages you want.
