@@ -101,7 +101,6 @@ class MultiPDFParse:
                 raise ValueError(f"file {pdf_file} is not pdf file")
 
     def check_out_path(self):
-
         if self.output_path in ["", None]:
             self.output_path = os.path.join(
                 os.path.dirname(__file__), "_cache", str(int(datetime.now().timestamp() * 1000))

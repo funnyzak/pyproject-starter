@@ -36,7 +36,7 @@ Some features in this template project:
 - Use mypy for static type checking.
 - Use [pre-commit](https://pre-commit.com/) for code quality.
 - Use ipdb3 for debugging.
-- Multiple python versions support(Python 3.7+).
+- Multiple python versions support(Python 3.8.1+).
 - More features to be added 🚀 .
 
 ## Project
@@ -48,9 +48,9 @@ Contains the following projects under `src` as demo:
 
 ## Prerequisite
 
-- [Python 3.7+](https://www.python.org/)
-- [Poetry 1.2](https://python-poetry.org/)
-- [pre-commit](https://pre-commit.com/)
+- [Python 3.8.1+](https://www.python.org/)
+- [Poetry 1.3.2](https://python-poetry.org/)
+- [pre-commit V3](https://pre-commit.com/)
 
 ## Installation
 

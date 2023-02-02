@@ -14,8 +14,6 @@ from typing import List
 from PyPDF2 import PdfReader
 from PyPDF2 import PdfWriter
 from PyPDF2.generic import AnnotationBuilder
-from pikepdf import Pdf
-from pikepdf import PdfImage
 
 
 class SinglePdfParse:
@@ -34,22 +32,8 @@ class SinglePdfParse:
         self.check_out_path()
 
     def export_as_images(self) -> List[str]:
-        pass
-
-    def extract_images(self) -> List[str]:
-        """Extract images from pdf file."""
-        pdf = Pdf.open(self.pdf_file)
-
-        img_path_list = []
-
-        for i, page in enumerate(pdf.pages):
-            for j, (_name, raw_image) in enumerate(page.images.items()):
-
-                cur_img = PdfImage(raw_image)
-                img_path_list.append(cur_img.extract_to(fileprefix=f"{self.output_path}-page{i:03}-img{j:03}"))
-
-        print(f"\033[1;32mExtracted images to {self.output_path}, all images: {img_path_list}\033[0m")
-        return img_path_list
+        # return empty
+        return []
 
     def add_annotation(self, annotation_list: list) -> str:
         """Fill the writer with the pages you want.
@@ -101,12 +85,6 @@ attachment_dir = os.path.join(root_dir, "public/attachments/pdf")
 pic_pdf_path = os.path.join(attachment_dir, "samplepic.pdf")
 
 
-def test_extract_images() -> None:
-    """Test extract pdf images."""
-    extract_pdf_images = SinglePdfParse(pic_pdf_path)
-    extract_pdf_images.extract_images()
-
-
 def test_export_as_images() -> None:
     """Test export pdf as images."""
     extract_pdf_images = SinglePdfParse(pic_pdf_path)
@@ -137,21 +115,20 @@ def main() -> None:  # pragma: no cover
     parser.add_argument("-i", "--input", help="input pdf file", required=False)
     parser.add_argument("-o", "--output", help="output directory", required=False)
 
-    args = parser.parse_args()
+    # args = parser.parse_args()
+    # mode = args.model if not args.mode and args.mode in ["extract-images"] else "extract-images"
+    # pdf_file = args.input
+    # output_dir = args.output
 
-    mode = args.model if not args.mode and args.mode in ["extract-images"] else "extract-images"
-    pdf_file = args.input
-    output_dir = args.output
+    # if pdf_file is None:
+    #     pdf_file = input("input pdf file: ").split(" ")
+    # if output_dir is None:
+    #     output_dir = input("input output directory: ")
 
-    if pdf_file is None:
-        pdf_file = input("input pdf file: ").split(" ")
-    if output_dir is None:
-        output_dir = input("input output directory: ")
+    # extract_pdf = SinglePdfParse(pdf_file, output_dir)
 
-    extract_pdf = SinglePdfParse(pdf_file, output_dir)
-
-    if mode == "extract-images":
-        extract_pdf.extract_images()
+    # if mode == "extract-images":
+    #     extract_pdf.extract_images()
 
 
 if __name__ == "__main__":

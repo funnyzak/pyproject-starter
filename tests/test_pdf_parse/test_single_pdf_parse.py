@@ -23,13 +23,6 @@ def test_not_pdf_file():
     assert exec_msg.index("not pdf file") != -1
 
 
-@pytest.mark.test_extract_pdf_images
-@pytest.mark.parametrize("output_path", [tpp.test_dist_path, ""])
-def test_extract_pdf_images(output_path):
-    # extract pdf images
-    single_pdf_parse.SinglePdfParse(tpp.demo_pic_pdf_path, output_path).extract_images()
-
-
 def test_export_as_images():
     single_pdf_parse.SinglePdfParse(tpp.demo_pic_pdf_path).export_as_images()
 
@@ -68,10 +61,6 @@ def test_add_annotation():
             ]
         )
     )
-
-
-def test_extract_images_demo():
-    single_pdf_parse.test_extract_images()
 
 
 def test_add_annotation_demo():
