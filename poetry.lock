@@ -113,14 +113,14 @@ uvloop = ["uvloop (>=0.15.2)"]
 
 [[package]]
 name = "borb"
-version = "2.1.8"
+version = "2.1.11"
 description = "borb is a library for reading, creating and manipulating PDF files in python."
 category = "main"
 optional = true
 python-versions = ">=3.6"
 files = [
-    {file = "borb-2.1.8-py3-none-any.whl", hash = "sha256:2b5745acbcda0ee2cd28bf5ff1ffb91b52d8dcb68b969d820fb97fe6f6f9fbfc"},
-    {file = "borb-2.1.8.tar.gz", hash = "sha256:88a838f962b8927dd4a0982f80ca84ea5321edb9e3aa19f042d44c2d003ffd69"},
+    {file = "borb-2.1.11-py3-none-any.whl", hash = "sha256:4284f0a7084a173fc56b23161065cf77f1ddba9894305e9ab83b33ce3213763a"},
+    {file = "borb-2.1.11.tar.gz", hash = "sha256:e93bcfba63fe483eacb57271fc9f925f8f3b0e0d902a4c8c2c87eea2409e9983"},
 ]
 
 [package.dependencies]
@@ -1446,4 +1446,4 @@ pdf = ["PyPDF2", "borb", "requests"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8.1"
-content-hash = "7b834c8a213533724375dc1e9e8c35adfd08b99ca9694cd5718759b12a14c37b"
+content-hash = "e6f732388ee05c39d6762de647ca782a374cca4300f2cf4cce3cad873fc81186"
