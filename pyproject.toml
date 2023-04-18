@@ -39,7 +39,7 @@ multi_layer_pdf_demo = { callable = "pdf_parse.multi_pdf_parse:test_multi_pdf_to
 python = "^3.8.1"
 
 # optional dependencies, which enhance a package, but are not required; and clusters of optional dependencies.
-borb = { version = "^2.1.7", optional = true }
+borb = { version = "^2.1.12", optional = true }
 PyPDF2 = { version = "^2.12.1", optional = true }
 requests = {version = "^2.28.1", optional = true}
 
