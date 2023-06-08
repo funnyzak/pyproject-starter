@@ -4,7 +4,8 @@
 # license: MIT
 # description: Extract text location from pdf file.
 # usage: poetry run python src/pdf_parse/extract_text_location.py -i public/attachments/pdf/whatispython.pdf
-# notes:
+# notes: This script is based on pdfminer, it extracts the text location of each page in the pdf
+# file and saves it as a json file.
 
 import argparse
 import json
@@ -132,7 +133,7 @@ class ExtractTextLocation:
             pdf_name = os.path.basename(self.pdf_file).split(".")[0]
             page_list = []
             for page_index, page in enumerate(PDFPage.create_pages(doc)):
-                print("================ page: ", page_index + 1, " ==================")
+                print("pdf file: ", self.pdf_file, " page: ", page_index + 1, " processing")
                 interpreter.process_page(page)
                 layout = device.get_result()
                 # get layout width and height
@@ -146,13 +147,20 @@ class ExtractTextLocation:
                     }
                 )
             pdf_json = {"name": pdf_name, "page_count": len(page_list), "pages": page_list}
-            print("pdf_json: ", pdf_json)
+            # print("pdf_json: ", pdf_json)
             with open(os.path.join(self.output_path, pdf_name + ".json"), "w") as out_file:
                 out_file.write(json.dumps(pdf_json, indent=4, ensure_ascii=False))
                 print(
                     "save json file success. file: ",
                     os.path.join(self.output_path, pdf_name + ".json"),
                 )
+            with open(os.path.join(self.output_path, pdf_name + "-min.json"), "w") as out_file:
+                out_file.write(json.dumps(pdf_json, ensure_ascii=False))
+                print(
+                    "save min json file success. file: ",
+                    os.path.join(self.output_path, pdf_name + "-min.json"),
+                )
+
             end_time = time.time()
             print(
                 "============== pdf file: ",
