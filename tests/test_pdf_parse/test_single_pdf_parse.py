@@ -31,10 +31,6 @@ def test_export_as_images_demo():
     single_pdf_parse.test_export_as_images()
 
 
-def test_export_as_text():
-    single_pdf_parse.test_extract_text()
-
-
 # test add annotation
 def test_add_annotation():
     output_pdf = os.path.join(tpp.test_dist_path, f"test_add_annotation_{str(int(datetime.now().timestamp() * 1000 ))}")

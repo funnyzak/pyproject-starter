@@ -77,9 +77,6 @@ poetry install --extras "pdf"
 poetry install --with dev,test
 # Only install required dependencies for production
 poetry install
-
-# Specify python version
-poetry env use python3.9
 ```
 
 ## Usage
@@ -95,9 +92,6 @@ poetry run merge_pdf_demo
 
 # Run project => pdf_parse: parse multi pdf to multi-layer pdf
 poetry run multi_layer_pdf_demo
-
-# Extract text to json from pdf
-poetry run extract_text_from_pdf
 
 # Debug "hello" project with ipdb3
 poetry run ipdb3 ./src/hello/main.py

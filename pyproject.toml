@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyproject-starter"
-version = "0.1.7"
+version = "0.1.6"
 description = "A template for the python project. It uses poetry for dependency management and tox for testing."
 authors = ["Leon <silenceace@gmail.com>"]
 license = "MIT"
@@ -27,8 +27,6 @@ packages = [
 hello = "hello.main:say_hello"
 single_pdf_parse = { callable = "pdf_parse.single_pdf_parse:main", extras = ["pdf"] }
 multi_pdf_parse = { callable = "pdf_parse.multi_pdf_parse:main", extras = ["pdf"] }
-extract_text_from_pdf = { callable = "pdf_parse.extract_text_location:test_extract_text_location", extras = ["pdf"] }
-
 
 
 add_pdf_annotation_demo = { callable = "pdf_parse.single_pdf_parse:test_add_annotation", extras = ["pdf"] }
@@ -44,11 +42,10 @@ python = "^3.8.1"
 borb = { version = "^2.1.7", optional = true }
 PyPDF2 = { version = "^2.12.1", optional = true }
 requests = {version = "^2.28.1", optional = true}
-pdfminer = {version = "^20191125", optional = true}
 
 
 [tool.poetry.extras]
-pdf = ["PyPDF2", "borb", "requests", "pdfminer"]
+pdf = ["PyPDF2", "borb", "requests"]
 
 [tool.poetry.group.dev]
 optional = true
