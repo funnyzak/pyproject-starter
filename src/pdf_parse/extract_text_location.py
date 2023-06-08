@@ -114,7 +114,7 @@ class ExtractTextLocation:
 
             rsrcmgr = PDFResourceManager()  # Create a PDF resource manager to share resources
             # Create a PDF device object
-            laparams = LAParams()
+            laparams = LAParams(detect_vertical=True)
             device = PDFPageAggregator(rsrcmgr, laparams=laparams)
             # Create a PDF interpreter object
             interpreter = PDFPageInterpreter(rsrcmgr, device)
