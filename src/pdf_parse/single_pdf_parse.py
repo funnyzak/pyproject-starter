@@ -35,6 +35,15 @@ class SinglePdfParse:
         # return empty
         return []
 
+    def extract_text(self) -> str:
+        """Extract text from pdf file."""
+        reader = PdfReader(self.pdf_file)
+        # extract text from pdf file
+        text = ""
+        for page in reader.pages:
+            text += page.extract_text()
+        return text
+
     def add_annotation(self, annotation_list: list) -> str:
         """Fill the writer with the pages you want.
 
@@ -83,12 +92,20 @@ class SinglePdfParse:
 root_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 attachment_dir = os.path.join(root_dir, "public/attachments/pdf")
 pic_pdf_path = os.path.join(attachment_dir, "samplepic.pdf")
+pic_pdf_path2 = os.path.join(attachment_dir, "whatispython.pdf")
 
 
 def test_export_as_images() -> None:
     """Test export pdf as images."""
     extract_pdf_images = SinglePdfParse(pic_pdf_path)
     extract_pdf_images.export_as_images()
+
+
+def test_extract_text() -> None:
+    """Test extract text from pdf."""
+    extract_pdf_text = SinglePdfParse(pic_pdf_path2)
+    text = extract_pdf_text.extract_text()
+    print(text)
 
 
 def test_add_annotation() -> None:

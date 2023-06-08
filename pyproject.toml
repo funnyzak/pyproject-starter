@@ -27,6 +27,7 @@ packages = [
 hello = "hello.main:say_hello"
 single_pdf_parse = { callable = "pdf_parse.single_pdf_parse:main", extras = ["pdf"] }
 multi_pdf_parse = { callable = "pdf_parse.multi_pdf_parse:main", extras = ["pdf"] }
+extract_text_from_pdf = { callable = "pdf_parse.single_pdf_parse:test_extract_text", extras = ["pdf"] }
 
 
 add_pdf_annotation_demo = { callable = "pdf_parse.single_pdf_parse:test_add_annotation", extras = ["pdf"] }
