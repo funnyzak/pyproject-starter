@@ -11,16 +11,16 @@ import json
 import os
 import time
 
-from pdfminer.converter import PDFPageAggregator
-from pdfminer.layout import LAParams
+from pdfminer.converter import PDFPageAggregator  # type: ignore
+from pdfminer.layout import LAParams  # type: ignore
 from pdfminer.layout import LTAnno
 from pdfminer.layout import LTChar
 from pdfminer.layout import LTText
-from pdfminer.pdfdocument import PDFDocument
-from pdfminer.pdfinterp import PDFPageInterpreter
+from pdfminer.pdfdocument import PDFDocument  # type: ignore
+from pdfminer.pdfinterp import PDFPageInterpreter  # type: ignore
 from pdfminer.pdfinterp import PDFResourceManager
-from pdfminer.pdfpage import PDFPage
-from pdfminer.pdfparser import PDFParser
+from pdfminer.pdfpage import PDFPage  # type: ignore
+from pdfminer.pdfparser import PDFParser  # type: ignore
 
 
 class ExtractTextLocation:
@@ -109,7 +109,7 @@ class ExtractTextLocation:
 
         with open(self.pdf_file, "rb") as in_file:
             parser = PDFParser(in_file)
-            doc: PDFDocument = PDFDocument(parser)  # Create a PDF document
+            doc = PDFDocument(parser)  # Create a PDF document
 
             rsrcmgr = PDFResourceManager()  # Create a PDF resource manager to share resources
             # Create a PDF device object
