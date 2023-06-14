@@ -48,15 +48,16 @@ Contains the following projects under `src` as demo:
 
 ## Prerequisite
 
+Run project need the following environment installed:
+
 - [Python 3.8.1+](https://www.python.org/)
 - [Poetry 1.3.2](https://python-poetry.org/)
-- [pre-commit V3](https://pre-commit.com/)
+
+If you want development, you need to install  [pre-commit V3](https://pre-commit.com/) for git hook scripts.
 
 ## Installation
 
 following the steps below to setup the project:
-
-```bash
 
 ```bash
 # Clone the repository
