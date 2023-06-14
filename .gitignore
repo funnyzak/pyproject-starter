@@ -148,3 +148,7 @@ _cache/
 **/*/*test*.png
 
 **/*/pdf/*.json
+
+
+_logs/
+logs/
