@@ -89,7 +89,7 @@ pytest = "^7.3.2"
 optional = true
 
 [tool.poetry.group.coverage.dependencies]
-coverage = "^7.0.0"
+coverage = "^7.3.2"
 pytest-cov = "^4.0.0"
 
 [build-system]
