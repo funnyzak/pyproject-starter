@@ -68,7 +68,7 @@ pdf = ["PyPDF2", "borb", "requests", "pdfminer"]
 optional = true
 
 [tool.poetry.group.dev.dependencies]
-isort = "^5.12.0"
+isort = "^5.13.1"
 black = "^23.0.0"
 mypy = "^0.991"
 flake8 = "^6.0.0"
