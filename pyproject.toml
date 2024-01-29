@@ -83,7 +83,7 @@ pre-commit = "^3.0.0"
 optional = true
 
 [tool.poetry.group.test.dependencies]
-pytest = "^7.3.2"
+pytest = "^8.0.0"
 
 [tool.poetry.group.coverage]
 optional = true
